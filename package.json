@@ -1,0 +1,23 @@
+{
+  "name": "cargo",
+  "version": "1.0.0",
+  "description": "cargo projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehtapugur/Cargo-Delivery-System.git"
+  },
+  "author": "Mehtap Ugur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mehtapugur/Cargo-Delivery-System/issues"
+  },
+  "homepage": "https://github.com/mehtapugur/Cargo-Delivery-System#readme",
+  "dependencies": {
+    "electron": "^15.1.2"
+  }
+}
