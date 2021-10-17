@@ -18,15 +18,26 @@ app.on("ready", () => {
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "main.html"),
-      protocol: "file",
+      protocol: "file:",
       slashes: true,
     })
   );
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
   Menu.setApplicationMenu(mainMenu);
 
+  //input ile girilen veriyi alıyoruz
   ipcMain.on("key:userNameDOM", (err, data) => {
     console.log(data);
+  });
+
+  // New Window
+  ipcMain.on("key:newWindow", () => {
+    createWindow();
+  });
+
+  //ana pencere kapandığında tüm uygulama kapanır
+  mainWindow.on("close", () => {
+    app.quit();
   });
 });
 
@@ -59,5 +70,27 @@ if (process.env.NODE_ENV !== "production") {
         role: "reload",
       },
     ],
+  });
+}
+
+// Yeni pencere açılması
+function createWindow() {
+  addWindow = new BrowserWindow({
+    width: 482,
+    height: 200,
+    title: "New Page",
+  });
+
+  addWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "new.html"),
+      protocol: "file:",
+      slashes: true,
+    })
+  );
+
+  //bu pencere kapanırsa addWindow değeri sıfırlanır ki bellekte yer kaplamasın
+  addWindow.on("close", () => {
+    addWindow = null;
   });
 }
