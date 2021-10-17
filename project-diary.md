@@ -13,3 +13,4 @@
 ### Day 4
 
   - input ile alınan verinin login butonuna basılınca backend e aktarılması işlemi yapıldı
+  - butona basılınca yeni pencere açma olayı eklendi
