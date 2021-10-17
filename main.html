@@ -13,7 +13,8 @@
   <h1>Cargo</h1>
   <input type="text" id="userName" placeholder="Username">
   <input type="password" id="password" placeholder="Password"><br>
-  <button id="login">Login</button><button id=signup"">Signup</button>
+  <button id="login">Login</button><button id=signup"">Signup</button><br>
+  <button id="newWindow">Open New Window</button>
 
   <script>
 
@@ -22,10 +23,17 @@
 
     let userNameDOM = document.getElementById("userName");
     let login = document.getElementById("login");
+    let newWindowDOM = document.getElementById("newWindow");
 
+    //inputa girilen değeri backend e gönderiyoruz
     login.addEventListener("click", () => {
       ipcRenderer.send("key:userNameDOM", userNameDOM.value);
-      console.log("yes");
+      //console.log("yes");
+    })
+
+    //butona basılınca newWindow adında bir event yayıyoruz
+    newWindowDOM.addEventListener("click", () => {
+      ipcRenderer.send("key:newWindow");
     })
 
 
