@@ -14,3 +14,12 @@
 
   - input ile alınan verinin login butonuna basılınca backend e aktarılması işlemi yapıldı
   - butona basılınca yeni pencere açma olayı eklendi
+
+### Day 5 - 6 - 7
+
+  - Kablosuzkedi  eğitim videoalrındaki todo app yapılmaya çalışıldı, 7. videoda ki cancel butonu bir türlü olmayınca proje askıya alındı
+  - Cargo projesinde electron firebase bağlama işlemi yapıldı
+  - giriş yapılınca ana sayfa değiştirildi
+  - adres ve durum seçeneklerinin olduğu sayfa eklendi
+  - seçilen sayfaya göre uygulama arayüzüne html dosyasının yüklenmesi sağlandı
+ 
