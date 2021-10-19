@@ -39,6 +39,14 @@ app.on("ready", () => {
     intoWindow();
   });
 
+  ipcMain.on("key:address", () => {
+    addressWindow();
+  });
+
+  ipcMain.on("key:status", () => {
+    statusWindow();
+  });
+
   //ana pencere kapandığında tüm uygulama kapanır
   mainWindow.on("close", () => {
     app.quit();
@@ -103,6 +111,26 @@ function intoWindow() {
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "next.html"),
+      protocol: "file:",
+      slashes: true,
+    })
+  );
+}
+
+function addressWindow() {
+  mainWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "address.html"),
+      protocol: "file:",
+      slashes: true,
+    })
+  );
+}
+
+function statusWindow() {
+  mainWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "status.html"),
       protocol: "file:",
       slashes: true,
     })
