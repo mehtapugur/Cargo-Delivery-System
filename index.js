@@ -35,6 +35,10 @@ app.on("ready", () => {
     createWindow();
   });
 
+  ipcMain.on("key:access", () => {
+    intoWindow();
+  });
+
   //ana pencere kapandığında tüm uygulama kapanır
   mainWindow.on("close", () => {
     app.quit();
@@ -93,4 +97,14 @@ function createWindow() {
   addWindow.on("close", () => {
     addWindow = null;
   });
+}
+
+function intoWindow() {
+  mainWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "next.html"),
+      protocol: "file:",
+      slashes: true,
+    })
+  );
 }
