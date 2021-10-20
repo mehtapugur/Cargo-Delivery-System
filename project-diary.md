@@ -23,3 +23,13 @@
   - adres ve durum seçeneklerinin olduğu sayfa eklendi
   - seçilen sayfaya göre uygulama arayüzüne html dosyasının yüklenmesi sağlandı
  
+### Day 8
+
+  - Google maps api projeye eklendi
+  - Hızlı giriş için main e enter butonu eklendi
+  - mugur.js gmail hesabından google cloud a giriş yapıldı
+  - proje için billing işlemi yapıldı
+  - google maps enable işlemi yapıldı
+  - google cloud tan proje oluşturulup api alındı
+  - uygulamadan open maps butonu ile harita sayfası açtırıldı
+  - harita sayfası üzerinden butona basıldığı algılanabiliyor
