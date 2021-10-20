@@ -40,6 +40,10 @@ app.on("ready", () => {
     intoWindow();
   });
 
+  ipcMain.on("key:enter", () => {
+    intoWindow();
+  });
+
   ipcMain.on("key:address", () => {
     addressWindow();
   });
