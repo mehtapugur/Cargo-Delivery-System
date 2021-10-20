@@ -4,6 +4,7 @@ const url = require("url");
 const path = require("path");
 
 let mainWindow;
+let openMapWindow;
 
 //uygulama hazır olduğunda ana pencereyi açıyoruz
 app.on("ready", () => {
@@ -45,6 +46,10 @@ app.on("ready", () => {
 
   ipcMain.on("key:status", () => {
     statusWindow();
+  });
+
+  ipcMain.on("key:openMap", () => {
+    openMap();
   });
 
   //ana pencere kapandığında tüm uygulama kapanır
@@ -135,4 +140,25 @@ function statusWindow() {
       slashes: true,
     })
   );
+}
+
+function openMap() {
+  openMapWindow = new BrowserWindow({
+    width: 700,
+    height: 700,
+    title: "Google Maps",
+  });
+
+  openMapWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "map.html"),
+      protocol: "file:",
+      slashes: true,
+    })
+  );
+
+  //bu pencere kapanırsa openMapWindow değeri sıfırlanır ki bellekte yer kaplamasın
+  openMapWindow.on("close", () => {
+    openMapWindow = null;
+  });
 }
