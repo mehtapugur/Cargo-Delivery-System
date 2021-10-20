@@ -5,20 +5,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJPW8ZWdJhtfjQmdEQ7hw3Sz4zAHzm5DM&callback=initMap">
+    </script>
   <title>Google Maps</title>
+  <style>
+    #map {
+      height: 80%;
+      width: 80%;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
 
 <body>
   <p>Ben mapim</p>
-  <button id="map">map butonu</button>
+  <button id="mapBtn">map butonu</button>
+  <div id="map"></div>
 </body>
 
 <script>
   //önce geldi
   console.log("hi mehoo");
 
-  let mapDOM = document.getElementById("map");
-  //burada mapDOM yerine map yazınca da çalıştı çok şaşırdım, neden acaba
+  let mapDOM = document.getElementById("mapBtn");
   mapDOM.addEventListener("click", () => {
     console.log("map a basti");
 
@@ -30,6 +46,16 @@
     function () { console.log("3 sn hi mehoo"); }
     , 3000
   );
+
+  function initMap() {
+
+    let options = {
+      center: { lat: 40.7750, lng: 29.9480 },
+      zoom: 12,
+    }
+
+    map = new google.maps.Map(document.getElementById("map"), options)
+  }
 
 </script>
 
