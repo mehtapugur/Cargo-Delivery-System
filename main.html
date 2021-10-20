@@ -17,6 +17,7 @@
   <input type="password" id="password" placeholder="Password"><br>
   <button id="login">Login</button><button id="signup">Signup</button><br>
   <button id="newWindow">Open New Window</button>
+  <button id="enter">Enter</button>
 
  <script type="module">
 
@@ -45,6 +46,10 @@
 
     let userNameDOM = document.getElementById("userName");
     let passwordDOM = document.getElementById("password");
+    let enterDOM = document.getElementById("enter");
+    enterDOM.addEventListener("click", () => {
+      ipcRenderer.send("key:enter");
+    });
 
     let signup = document.getElementById("signup");
     signup.addEventListener("click", () => {
