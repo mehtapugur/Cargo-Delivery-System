@@ -10,6 +10,18 @@
 
 <body>
   <h5>I'm an address page</h5>
+  <button id="openMap">Open Map</button>
 </body>
+<script>
+  const electron = require("electron");
+  const { ipcRenderer } = require("electron");
+
+  let openMapDOM = document.getElementById("openMap");
+
+  openMapDOM.addEventListener("click", () => {
+    ipcRenderer.send("key:openMap");
+  })
+
+</script>
 
 </html>
