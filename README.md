@@ -10,3 +10,6 @@ Hello World!
   - add emojis
   - add comments on codes files
   - fix the folder structures
+  - add back button
+  - seperate signup and login page
+  - login with username
