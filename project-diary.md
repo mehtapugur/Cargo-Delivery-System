@@ -33,3 +33,8 @@
   - google cloud tan proje oluşturulup api alındı
   - uygulamadan open maps butonu ile harita sayfası açtırıldı
   - harita sayfası üzerinden butona basıldığı algılanabiliyor
+
+### Day 9
+
+  - Firebase Database hataları düzeltildi
+  - Dosya yapısı düzeltildi
