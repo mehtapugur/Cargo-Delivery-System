@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h5>I'm an address page</h5>
+  <button id="openMap">Open Map</button><br>
+
+  <input type="text" id="konum" placeholder="konum bilgisi"><br>
+  <button id="kaydet">Save</button>
+
+  <div id="burayaGel"></div>
+
+
+
+  <!--
+  <div class='container'>
+    <div class='header'>
+      <img src="https://firebase.google.com/images/brand-guidelines/logo-standard.png" width="100%" alt="">
+      <h4>Real-Time Database CRUD example</h4>
+    </div>
+    <br />
+    <form id='reviewForm'>
+      <input type="hidden" id='hiddenId' />
+      <div class="input-field">
+        <label for="fullName">Full Name</label>
+        <input type="text" id='fullName' />
+      </div>
+      <br />
+      <div class="input-field">
+        <label for="message">Review Contents</label>
+        <textarea class="materialize-textarea" id='message'></textarea>
+      </div>
+      <div class="input-field">
+        <label for="tags">Tags</label>
+        <input type="text" id='tags' />
+      </div>
+      <br />
+      <br />
+      <button class="waves-effect waves-light btn" type='submit'>Add / Update review</button>
+    </form>
+    <br /><br /><br />
+    <ul id='reviews'></ul>
+  </div> -->
+
+  <!--
+  <script type="module">
+    //import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+    //import { app, auth } from "";
+  /* const electron = require("electron");
+    const { ipcRenderer } = require("electron");
+
+    let openMapDOM = document.getElementById("openMap");
+
+    openMapDOM.addEventListener("click", () => {
+      ipcRenderer.send("key:openMap");
+    }); */
+
+    /*
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyALVsn7nR8-UKOHO9r7ZedcIouYfW8cceE",
+      authDomain: "cargo-27f95.firebaseapp.com",
+      projectId: "cargo-27f95",
+      storageBucket: "cargo-27f95.appspot.com",
+      messagingSenderId: "402656272095",
+      appId: "1:402656272095:web:a8e050e3c4d871cbe3136a",
+    };
+
+    // Initialize Firebase
+    //const app = initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    
+    //let db = firebase.database();
+
+    console.log("nem");
+
+    let konumDOM = document.getElementById("konum");
+    let saveBtn = document.getElementById("kaydet");
+    let current_user = "";
+
+
+
+
+    firebase.auth().onAuthStateChanged(function (user) {
+
+      if (user) {
+
+        current_user = user.uid;
+        console.log(current_user);
+        //console.log("ne");
+
+        //firebase.database().ref().child("users").child(current_user).child("konum").push("ayyydan geldim");
+
+        //firebase.database();
+        //let db = firebase.database();
+        //let usersRef = db.ref("/users");
+
+        saveBtn.addEventListener("click", (e) => {
+          
+          db.ref("users/" + current_user).set({
+            konum: konumDOM.value,
+          }
+          )
+
+        });
+      }
+    });
+
+    */
+
+  </script> 
+-->
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+ -->
+  <script src="address.js"></script>
+</body>
+
+</html>

@@ -18,7 +18,7 @@ app.on("ready", () => {
 
   mainWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "main.html"),
+      pathname: path.join(__dirname, "src\\main.html"),
       protocol: "file:",
       slashes: true,
     })
@@ -94,7 +94,7 @@ if (process.env.NODE_ENV !== "production") {
   });
 }
 
-// Yeni pencere açılması
+/*Yeni pencere açılması
 function createWindow() {
   addWindow = new BrowserWindow({
     width: 482,
@@ -113,13 +113,13 @@ function createWindow() {
   //bu pencere kapanırsa addWindow değeri sıfırlanır ki bellekte yer kaplamasın
   addWindow.on("close", () => {
     addWindow = null;
-  });
-}
+  }); 
+}*/
 
 function intoWindow() {
   mainWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "next.html"),
+      pathname: path.join(__dirname, "src\\cargo\\cargo.html"),
       protocol: "file:",
       slashes: true,
     })
@@ -129,7 +129,7 @@ function intoWindow() {
 function addressWindow() {
   mainWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "address.html"),
+      pathname: path.join(__dirname, "src\\cargo\\address\\address.html"),
       protocol: "file:",
       slashes: true,
     })
@@ -139,7 +139,7 @@ function addressWindow() {
 function statusWindow() {
   mainWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "status.html"),
+      pathname: path.join(__dirname, "src\\cargo\\status\\status.html"),
       protocol: "file:",
       slashes: true,
     })
@@ -155,7 +155,7 @@ function openMap() {
 
   openMapWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "map.html"),
+      pathname: path.join(__dirname, "src\\cargo\\map\\map.html"),
       protocol: "file:",
       slashes: true,
     })
