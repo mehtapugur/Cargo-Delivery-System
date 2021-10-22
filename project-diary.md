@@ -55,3 +55,10 @@
   - Adres ve durum sayfaları arasında geçiş yapacak butonlar eklendi
   - Dosya/klasör isimleri değiştirildi ve dosya yapısı düzeltildi
   - JavaScript'in single thread doğası araştırıldı
+
+### Day 11
+
+  - Google Maps API ile manuel olarak marker oluşturuldu
+  - Map sayfasından firebase e erişim sağlandı
+  - Bulut veritabanındaki konumlar alınarak herbiri için marker oluşturuldu
+  - Adres/durum sayfalarında veya bulutta yapılan değişikliklerin haritaya dinamik olarak yansıması sağlandı
