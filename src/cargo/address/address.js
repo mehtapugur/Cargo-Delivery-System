@@ -42,16 +42,67 @@ auth.onAuthStateChanged(function (user) {
     console.log("ne");
 
     saveBtn.addEventListener("click", (e) => {
-      db.ref()
-        .child("users/" + current_user)
-        .child("locations")
-        .push({
-          enlem: enlemDOM.value,
-          boylam: boylamDOM.value,
-        });
-      console.log("ay");
-      enlemDOM.value = "";
-      boylamDOM.value = "";
+      if (enlemDOM.value !== "" && boylamDOM.value !== "") {
+        db.ref()
+          .child("users/" + current_user)
+          .child("locations")
+          .push({
+            enlem: enlemDOM.value,
+            boylam: boylamDOM.value,
+          });
+        console.log("ay");
+        enlemDOM.value = "";
+        boylamDOM.value = "";
+      }
+    });
+
+    let dbRef = db
+      .ref()
+      .child("users/" + current_user)
+      .child("locations");
+    //console.log(dbRef);
+
+    dbRef.on("value", function (snapshot) {
+      let table = document.getElementById("table");
+      let tableBody = table.children[1];
+      console.log(table);
+      console.log(tableBody);
+      tableBody.innerHTML = "";
+
+      snapshot.forEach(function (item) {
+        /* let dataEnlem = document.createElement("td");
+        let dataBoylam = document.createElement("td");
+        dataEnlem.innerHTML = "enlemim";
+        dataBoylam.innerHTML = "boylamım";
+        let data = document.createElement("tr");
+        data.append(dataEnlem, dataBoylam);
+        tableBody.append(data); */
+
+        let dataEnlem = document.createElement("td");
+        let dataBoylam = document.createElement("td");
+        let dataSend = document.createElement("input");
+        dataSend.setAttribute("type", "checkbox");
+
+        if (item.val().send === true) {
+          dataSend.setAttribute("checked", "");
+        }
+
+        dataEnlem.innerHTML = item.val().enlem;
+        dataBoylam.innerHTML = item.val().boylam;
+        let data = document.createElement("tr");
+        data.append(dataEnlem, dataBoylam, dataSend);
+        tableBody.append(data);
+
+        //calistiiiiiiiiiiii
+        //console.log(item.val().enlem);
+
+        /* böyle çalışmıyo td eklenmiyor vs
+        let enlem = "<td>" + item.val().enlem + "<td>";
+        let boylam = `<td> + ${item.val().boylam} + <td>`;
+        console.log(enlem);
+        console.log(boylam);
+        tableBody.append("<tr>" + enlem + boylam + "<tr>"); */
+      });
     });
   }
 });
