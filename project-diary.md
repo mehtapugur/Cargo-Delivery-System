@@ -9,6 +9,8 @@
 
   - Electron ve React kullanılarak desktop app yapılmaya çalışıldı, olmadı
   - Electron ve NodeJS eğitim videoları izlendi
+  - Proje oluşturuldu
+  - Debugging için projeye DevTools özelliği eklendi
 
 ### Day 4
 
@@ -17,7 +19,7 @@
 
 ### Day 5 - 6 - 7
 
-  - Kablosuzkedi  eğitim videoalrındaki todo app yapılmaya çalışıldı, 7. videoda ki cancel butonu bir türlü olmayınca proje askıya alındı
+  - Kablosuzkedi  eğitim videolarındaki todo app yapılmaya çalışıldı, 7. videoda ki cancel butonu bir türlü olmayınca proje askıya alındı
   - Cargo projesinde electron firebase bağlama işlemi yapıldı
   - giriş yapılınca ana sayfa değiştirildi
   - adres ve durum seçeneklerinin olduğu sayfa eklendi
@@ -36,7 +38,7 @@
 
 ### Day 9
 
-  - Firebase database eğitim videoları izlendi
+  - Firebase database kullanılarak yapılmış projeler araştırıldı, videolar izlendi
   - Database hataları düzeltilerek veritabanına erişim sağlandı
   - Realtime databaseden veri girişi yapıldı
 
@@ -45,8 +47,10 @@
   - Bulut veritabanındaki bilgilere (users, uid, key, value) ulaşma işlemi yapıldı
   - addres.html sayfasından konum bilgisi alma (kayıt)  işlemi eklendi
   - Alınan konum bilgileri firebase database e aktarıldı
-  - Veritabanındaki bilgiler adres sayfasında tablo içerisinde gösterildi
-  - Kayıt silme işlemi eklendi
   - Projeye jQuery eklendi
   - DOM a sonradan eklenen html elemanlarına erişme problemi çözüldü
-  - Projenin dosya yapısı düzeltildi
+  - Veritabanındaki bilgiler adres sayfasında tablo içerisinde gösterildi
+  - Kayıt silme işlemi eklendi
+  - Teslimat durum sayfası oluşturulup buluttan alınan veriler burada görüntülendi
+  - Adres ve durum sayfaları arasında geçiş yapacak butonlar eklendi
+  - Dosya/klasör isimleri değiştirildi ve dosya yapısı düzeltildi
