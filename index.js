@@ -48,6 +48,10 @@ app.on("ready", () => {
     addressWindow();
   });
 
+  ipcMain.on("key:adresGit", () => {
+    addressGit();
+  });
+
   ipcMain.on("key:status", () => {
     statusWindow();
   });
@@ -127,6 +131,16 @@ function intoWindow() {
 }
 
 function addressWindow() {
+  mainWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "src\\cargo\\address\\address.html"),
+      protocol: "file:",
+      slashes: true,
+    })
+  );
+}
+
+function addressGit() {
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "src\\cargo\\address\\address.html"),
