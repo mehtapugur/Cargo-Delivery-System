@@ -85,6 +85,8 @@ auth.onAuthStateChanged(function (user) {
 
         if (item.val().send === true) {
           dataSend.setAttribute("checked", "");
+        } else {
+          //dataSend.setAttribute("check", "");
         }
 
         dataEnlem.innerHTML = item.val().enlem;
