@@ -86,9 +86,12 @@ auth.onAuthStateChanged(function (user) {
         dataSend.setAttribute("type", "checkbox");
         dataSendTd.append(dataSend);
 
+        //let key = item.key;
+
         let deleteDataTd = document.createElement("td");
         let deleteData = document.createElement("button");
         deleteData.setAttribute("id", "deleteBtn");
+        deleteData.setAttribute("data-key", item.key);
         deleteData.innerHTML = "sil";
         deleteDataTd.append(deleteData);
 
@@ -123,6 +126,10 @@ auth.onAuthStateChanged(function (user) {
     }); */
     $("#table tbody").on("click", "#deleteBtn", function () {
       console.log("delete e basti");
+
+      let $key = $(this).data("key");
+      console.log($key);
+      dbRef.child($key).remove();
     });
   }
 });
