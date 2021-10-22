@@ -19,7 +19,7 @@ const db = firebase.database();
 let adres = document.getElementById("adresGit");
 
 adres.addEventListener("click", () => {
-  ipcRenderer.send("key:adresGit");
+  ipcRenderer.send("key:address");
   console.log("adresegit");
 });
 
