@@ -54,3 +54,4 @@
   - Teslimat durum sayfası oluşturulup buluttan alınan veriler burada görüntülendi
   - Adres ve durum sayfaları arasında geçiş yapacak butonlar eklendi
   - Dosya/klasör isimleri değiştirildi ve dosya yapısı düzeltildi
+  - JavaScript'in single thread doğası araştırıldı
