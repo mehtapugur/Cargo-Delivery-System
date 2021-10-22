@@ -36,5 +36,17 @@
 
 ### Day 9
 
-  - Firebase Database hataları düzeltildi
-  - Dosya yapısı düzeltildi
+  - Firebase database eğitim videoları izlendi
+  - Database hataları düzeltilerek veritabanına erişim sağlandı
+  - Realtime databaseden veri girişi yapıldı
+
+### Day 10
+
+  - Bulut veritabanındaki bilgilere (users, uid, key, value) ulaşma işlemi yapıldı
+  - addres.html sayfasından konum bilgisi alma (kayıt)  işlemi eklendi
+  - Alınan konum bilgileri firebase database e aktarıldı
+  - Veritabanındaki bilgiler adres sayfasında tablo içerisinde gösterildi
+  - Kayıt silme işlemi eklendi
+  - Projeye jQuery eklendi
+  - DOM a sonradan eklenen html elemanlarına erişme problemi çözüldü
+  - Projenin dosya yapısı düzeltildi
