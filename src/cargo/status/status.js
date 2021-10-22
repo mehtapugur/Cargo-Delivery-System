@@ -1,3 +1,6 @@
+const electron = require("electron");
+const { ipcRenderer } = require("electron");
+
 const firebaseConfig = {
   apiKey: "AIzaSyALVsn7nR8-UKOHO9r7ZedcIouYfW8cceE",
   authDomain: "cargo-27f95.firebaseapp.com",
@@ -12,6 +15,13 @@ const app = firebase.initializeApp(firebaseConfig);
 //admin.initializeApp();
 const auth = firebase.auth();
 const db = firebase.database();
+
+let adres = document.getElementById("adresGit");
+
+adres.addEventListener("click", () => {
+  ipcRenderer.send("key:adresGit");
+  console.log("adresegit");
+});
 
 let current_user = "";
 
