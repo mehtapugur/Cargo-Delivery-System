@@ -31,7 +31,8 @@ console.log("nem");
 let current_user = "";
 
 auth.onAuthStateChanged(function (user) {
-  let konumDOM = document.getElementById("konum");
+  let enlemDOM = document.getElementById("enlem");
+  let boylamDOM = document.getElementById("boylam");
   let saveBtn = document.getElementById("kaydet");
 
   if (user) {
@@ -41,10 +42,16 @@ auth.onAuthStateChanged(function (user) {
     console.log("ne");
 
     saveBtn.addEventListener("click", (e) => {
-      db.ref("users/" + current_user).set({
-        konum: konumDOM.value,
-      });
+      db.ref()
+        .child("users/" + current_user)
+        .child("locations")
+        .push({
+          enlem: enlemDOM.value,
+          boylam: boylamDOM.value,
+        });
       console.log("ay");
+      enlemDOM.value = "";
+      boylamDOM.value = "";
     });
   }
 });
