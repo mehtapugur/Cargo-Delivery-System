@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJPW8ZWdJhtfjQmdEQ7hw3Sz4zAHzm5DM&callback=initMap">
     </script>
@@ -12,7 +17,7 @@
   <style>
     #map {
       height: 80%;
-      width: 80%;
+      width: 95%;
     }
 
     html,
@@ -30,33 +35,6 @@
   <div id="map"></div>
 </body>
 
-<script>
-  //önce geldi
-  console.log("hi mehoo");
-
-  let mapDOM = document.getElementById("mapBtn");
-  mapDOM.addEventListener("click", () => {
-    console.log("map a basti");
-
-  }
-  );
-
-  //sonra geldi 
-  setTimeout(
-    function () { console.log("3 sn hi mehoo"); }
-    , 3000
-  );
-
-  function initMap() {
-
-    let options = {
-      center: { lat: 40.7750, lng: 29.9480 },
-      zoom: 12,
-    }
-
-    map = new google.maps.Map(document.getElementById("map"), options)
-  }
-
-</script>
+<script src="map.js"></script>
 
 </html>
