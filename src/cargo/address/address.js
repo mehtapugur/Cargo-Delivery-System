@@ -81,8 +81,16 @@ auth.onAuthStateChanged(function (user) {
 
         let dataEnlem = document.createElement("td");
         let dataBoylam = document.createElement("td");
+        let dataSendTd = document.createElement("td");
         let dataSend = document.createElement("input");
         dataSend.setAttribute("type", "checkbox");
+        dataSendTd.append(dataSend);
+
+        let deleteDataTd = document.createElement("td");
+        let deleteData = document.createElement("button");
+        deleteData.setAttribute("id", "deleteBtn");
+        deleteData.innerHTML = "sil";
+        deleteDataTd.append(deleteData);
 
         if (item.val().send === true) {
           dataSend.setAttribute("checked", "");
@@ -93,7 +101,7 @@ auth.onAuthStateChanged(function (user) {
         dataEnlem.innerHTML = item.val().enlem;
         dataBoylam.innerHTML = item.val().boylam;
         let data = document.createElement("tr");
-        data.append(dataEnlem, dataBoylam, dataSend);
+        data.append(dataEnlem, dataBoylam, dataSendTd, deleteDataTd);
         tableBody.append(data);
 
         //calistiiiiiiiiiiii
@@ -106,6 +114,15 @@ auth.onAuthStateChanged(function (user) {
         console.log(boylam);
         tableBody.append("<tr>" + enlem + boylam + "<tr>"); */
       });
+      console.log(table);
+    });
+
+    /*
+    document.body.on("click", "#deleteBtn", function () {
+      console.log("delete basti");
+    }); */
+    $("#table tbody").on("click", "#deleteBtn", function () {
+      console.log("delete e basti");
     });
   }
 });
