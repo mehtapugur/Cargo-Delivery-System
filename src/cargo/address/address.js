@@ -20,6 +20,13 @@ const app = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.database();
 
+let durum = document.getElementById("durumGit");
+
+durum.addEventListener("click", () => {
+  ipcRenderer.send("key:status");
+  console.log("durumgit");
+});
+
 let openMapDOM = document.getElementById("openMap");
 
 openMapDOM.addEventListener("click", () => {
