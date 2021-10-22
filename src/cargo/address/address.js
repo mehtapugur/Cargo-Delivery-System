@@ -49,6 +49,7 @@ auth.onAuthStateChanged(function (user) {
           .push({
             enlem: enlemDOM.value,
             boylam: boylamDOM.value,
+            send: false,
           });
         console.log("ay");
         enlemDOM.value = "";
