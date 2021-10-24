@@ -1,11 +1,5 @@
 const electron = require("electron");
 const { ipcRenderer } = require("electron");
-//const functions = require("firebase-functions");
-//const admin = require("firebase-admin");
-
-// Import the functions you need from the SDKs you need
-//import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,45 +13,37 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-//const app = initializeApp(firebaseConfig);
 const app = firebase.initializeApp(firebaseConfig);
-//admin.initializeApp();
 const auth = firebase.auth();
 //const db = firebase.database();
 
+//DOM'daki input ve butonların tanımlanması
 let userNameDOM = document.getElementById("userName");
 let passwordDOM = document.getElementById("password");
 let enterDOM = document.getElementById("enter");
+let login = document.getElementById("login");
+let signup = document.getElementById("signup");
+
+//kaydet butonuna tıklandığında
 enterDOM.addEventListener("click", () => {
   ipcRenderer.send("key:enter");
 });
 
-let signup = document.getElementById("signup");
+//signup butonuna tıklandığında kullanıcı kaydı yapılır
 signup.addEventListener("click", () => {
-  console.log("heyomeho<3");
-  /* firebase.auth().createUserWithEmailAndPassword(userNameDOM.value, passwordDOM.value).then(() => console.log("oldu be")).catch(function(e){
-        console.log(e);
-      })*/
   const promise = auth
     .createUserWithEmailAndPassword(userNameDOM.value, passwordDOM.value)
     .then(() => {
-      ipcRenderer.send("key:access");
-      console.log("sign e geldi");
+      ipcRenderer.send("key:access"); //kayıt yapılınca anasayfanın değişmesi için event gönderildi
     })
     .catch((e) => console.log(e));
 });
 
-let login = document.getElementById("login");
 login.addEventListener("click", () => {
-  console.log("logmeho<3");
-  /* firebase.auth().createUserWithEmailAndPassword(userNameDOM.value, passwordDOM.value).then(() => console.log("oldu be")).catch(function(e){
-        console.log(e);
-      })*/
   const prom = auth
     .signInWithEmailAndPassword(userNameDOM.value, passwordDOM.value)
     .then(() => {
-      ipcRenderer.send("key:access");
-      console.log("login e geldi");
+      ipcRenderer.send("key:access"); //giriş yapılınca anasayfanın değişmesi için event gönderildi
     })
     .catch((e) => console.log(e));
 });
