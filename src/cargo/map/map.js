@@ -1,16 +1,3 @@
-//önce geldi
-console.log("hi mehoo");
-
-let mapDOM = document.getElementById("mapBtn");
-mapDOM.addEventListener("click", () => {
-  console.log("map a basti");
-});
-
-//sonra geldi
-setTimeout(function () {
-  console.log("2 sn hi mehoo");
-}, 2000);
-
 const firebaseConfig = {
   apiKey: "AIzaSyALVsn7nR8-UKOHO9r7ZedcIouYfW8cceE",
   authDomain: "cargo-27f95.firebaseapp.com",
@@ -22,9 +9,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-//const app = initializeApp(firebaseConfig);
 const app = firebase.initializeApp(firebaseConfig);
-//admin.initializeApp();
 const auth = firebase.auth();
 const db = firebase.database();
 
@@ -32,7 +17,6 @@ let current_user = "";
 
 auth.onAuthStateChanged(function (user) {
   if (user) {
-    //firebase.database().ref().child("users").child();
     current_user = user.uid;
     console.log(current_user);
 
@@ -40,23 +24,20 @@ auth.onAuthStateChanged(function (user) {
       .ref()
       .child("users/" + current_user)
       .child("locations");
-    //console.log(dbRef);
 
     dbRef.on("value", function (snapshot) {
-      initMap();
+      initMap(); //haritayı başlat
 
       snapshot.forEach(function (item) {
         //let key = item.key;
         if (item.val().send === true) {
           //dataSend.setAttribute("checked", "");
-        } else {
-          //dataSend.setAttribute("check", "");
         }
 
         let en = item.val().enlem;
         let boy = item.val().boylam;
-        console.log("sayim ne");
 
+        //db den alınan konumlara marker yerleştir
         let marker = new google.maps.Marker({
           // ncity örnek: lat: 40.76041822993424, lng: 29.934315627096588
           position: { lat: Number(en), lng: Number(boy) },
@@ -69,28 +50,29 @@ auth.onAuthStateChanged(function (user) {
 });
 
 function initMap() {
+  //harita merkezi ve yakınlık ölçüsü
   let options = {
     center: { lat: 40.775, lng: 29.948 },
     zoom: 16,
   };
-  console.log("hatam ne");
-  // New Map
+
+  // Map oluşturma
   map = new google.maps.Map(document.getElementById("map"), options);
 
+  //haritada tıklanan yere marker yerleştirme
   google.maps.event.addListener(map, "click", (event) => {
     addMarker({ location: event.latLng });
   });
 }
 
+//tıklanan yere marker ekleyip konumu db ye gönderme
 function addMarker(property) {
   const marker = new google.maps.Marker({
     position: property.location,
     map: map,
   });
-  //
-  console.log(JSON.stringify(property.location.toJSON().lat));
 
-  //console.log(property.location.latLng.lat);
+  //console.log(JSON.stringify(property.location.toJSON().lat));
   let en = JSON.stringify(property.location.toJSON().lat);
   let boy = JSON.stringify(property.location.toJSON().lng);
 
