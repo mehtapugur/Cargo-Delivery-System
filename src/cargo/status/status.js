@@ -12,10 +12,10 @@ const firebaseConfig = {
 };
 
 const app = firebase.initializeApp(firebaseConfig);
-//admin.initializeApp();
 const auth = firebase.auth();
 const db = firebase.database();
 
+let current_user = "";
 let adres = document.getElementById("adresGit");
 
 adres.addEventListener("click", () => {
@@ -23,20 +23,15 @@ adres.addEventListener("click", () => {
   console.log("adresegit");
 });
 
-let current_user = "";
-
 auth.onAuthStateChanged(function (user) {
   if (user) {
-    //firebase.database().ref().child("users").child();
     current_user = user.uid;
     console.log(current_user);
-    console.log("ne");
 
     let dbRef = db
       .ref()
       .child("users/" + current_user)
       .child("locations");
-    //console.log(dbRef);
 
     dbRef.on("value", function (snapshot) {
       let table = document.getElementById("table");
@@ -46,14 +41,6 @@ auth.onAuthStateChanged(function (user) {
       tableBody.innerHTML = "";
 
       snapshot.forEach(function (item) {
-        /* let dataEnlem = document.createElement("td");
-        let dataBoylam = document.createElement("td");
-        dataEnlem.innerHTML = "enlemim";
-        dataBoylam.innerHTML = "boylamım";
-        let data = document.createElement("tr");
-        data.append(dataEnlem, dataBoylam);
-        tableBody.append(data); */
-
         let dataEnlem = document.createElement("td");
         let dataBoylam = document.createElement("td");
         let dataSendTd = document.createElement("td");
@@ -61,6 +48,9 @@ auth.onAuthStateChanged(function (user) {
         dataSend.setAttribute("type", "checkbox");
         dataSendTd.append(dataSend);
 
+        if (item.val().send === true) {
+          dataSend.setAttribute("checked", "");
+        }
         //let key = item.key;
 
         let deleteDataTd = document.createElement("td");
@@ -70,29 +60,12 @@ auth.onAuthStateChanged(function (user) {
         deleteData.innerHTML = "sil";
         deleteDataTd.append(deleteData);
 
-        if (item.val().send === true) {
-          dataSend.setAttribute("checked", "");
-        } else {
-          //dataSend.setAttribute("check", "");
-        }
-
         dataEnlem.innerHTML = item.val().enlem;
         dataBoylam.innerHTML = item.val().boylam;
         let data = document.createElement("tr");
         data.append(dataEnlem, dataBoylam, dataSendTd, deleteDataTd);
         tableBody.append(data);
-
-        //calistiiiiiiiiiiii
-        //console.log(item.val().enlem);
-
-        /* böyle çalışmıyo td eklenmiyor vs
-        let enlem = "<td>" + item.val().enlem + "<td>";
-        let boylam = `<td> + ${item.val().boylam} + <td>`;
-        console.log(enlem);
-        console.log(boylam);
-        tableBody.append("<tr>" + enlem + boylam + "<tr>"); */
       });
-      console.log(table);
     });
 
     /*
@@ -100,10 +73,7 @@ auth.onAuthStateChanged(function (user) {
       console.log("delete basti");
     }); */
     $("#table tbody").on("click", "#deleteBtn", function () {
-      console.log("delete e basti");
-
       let $key = $(this).data("key");
-      console.log($key);
       dbRef.child($key).remove();
     });
   }
