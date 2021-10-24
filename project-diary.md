@@ -62,3 +62,10 @@
   - Map sayfasından firebase e erişim sağlandı
   - Bulut veritabanındaki konumlar alınarak herbiri için marker oluşturuldu
   - Adres/durum sayfalarında veya bulutta yapılan değişikliklerin haritaya dinamik olarak yansıması sağlandı
+
+### Day 12
+
+  - Haritada tıklanan yere marker eklenmesi işlemi yapıldı
+  - Haritada tıklanan konuma ait bilgilerin db ye gönderilmesi sağlandı
+  - Gereksiz kodlar/yazımlar silindi
+  - Tüm projeye yorum satırları eklendi
