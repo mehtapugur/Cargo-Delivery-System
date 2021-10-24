@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <h3>Next html açılsın pls</h3>
   <br>
   <button id="address">Teslimat adres sayfasına git</button>
   <br>
@@ -17,24 +16,6 @@
   <button id="status">Teslimat durum sayfasına git</button>
 </body>
 
-<script>
-  const electron = require("electron");
-  const { ipcRenderer } = require("electron");
-
-  let address = document.getElementById("address");
-
-  address.addEventListener("click", () => {
-    console.log("adrese basti");
-    ipcRenderer.send("key:address");
-  })
-
-  let status = document.getElementById("status");
-
-  status.addEventListener("click", () => {
-    console.log("duruma basti");
-    ipcRenderer.send("key:status");
-  })
-
-</script>
+<script src="cargo.js"></script>
 
 </html>
