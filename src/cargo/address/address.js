@@ -1,4 +1,3 @@
-//import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
 //import { app, auth, db } from "";
 const electron = require("electron");
 const { ipcRenderer } = require("electron");
@@ -14,42 +13,41 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-//const app = initializeApp(firebaseConfig);
 const app = firebase.initializeApp(firebaseConfig);
-//admin.initializeApp();
 const auth = firebase.auth();
 const db = firebase.database();
 
+// Değişken tanımlamaları
 let durum = document.getElementById("durumGit");
+let openMapDOM = document.getElementById("openMap");
+let current_user = "";
 
+//durum butonuna tıklanınca durum sayfasına gitmesi için event gönderildi
 durum.addEventListener("click", () => {
   ipcRenderer.send("key:status");
-  console.log("durumgit");
 });
 
-let openMapDOM = document.getElementById("openMap");
-
+//Harita açılması
 openMapDOM.addEventListener("click", () => {
   ipcRenderer.send("key:openMap");
 });
 
-console.log("nem");
-
-let current_user = "";
-
+//Kullanıcı giriş yaptıktan sonra
 auth.onAuthStateChanged(function (user) {
   let enlemDOM = document.getElementById("enlem");
   let boylamDOM = document.getElementById("boylam");
   let saveBtn = document.getElementById("kaydet");
 
+  //Doğrulanmış bir kullanıcı varsa
   if (user) {
-    //firebase.database().ref().child("users").child();
     current_user = user.uid;
-    console.log(current_user);
-    console.log("ne");
+    //console.log(current_user);
 
+    //kaydet butonuna basılınca
     saveBtn.addEventListener("click", (e) => {
+      //inputlar boş değilse
       if (enlemDOM.value !== "" && boylamDOM.value !== "") {
+        //alınan bilgiler db ye kaydedildi
         db.ref()
           .child("users/" + current_user)
           .child("locations")
@@ -58,34 +56,28 @@ auth.onAuthStateChanged(function (user) {
             boylam: boylamDOM.value,
             send: false,
           });
-        console.log("ay");
+
+        //input değerleri sıfırlandı
         enlemDOM.value = "";
         boylamDOM.value = "";
       }
     });
 
+    //konum bilgilerinin db de kaydedildiği path
     let dbRef = db
       .ref()
       .child("users/" + current_user)
       .child("locations");
-    //console.log(dbRef);
 
+    //bu pathte herhangi bir değişiklik olduğunda çalışacak kod
     dbRef.on("value", function (snapshot) {
       let table = document.getElementById("table");
       let tableBody = table.children[1];
-      console.log(table);
-      console.log(tableBody);
       tableBody.innerHTML = "";
 
+      //db deki tüm bilgileri dizi şeklinde alır
       snapshot.forEach(function (item) {
-        /* let dataEnlem = document.createElement("td");
-        let dataBoylam = document.createElement("td");
-        dataEnlem.innerHTML = "enlemim";
-        dataBoylam.innerHTML = "boylamım";
-        let data = document.createElement("tr");
-        data.append(dataEnlem, dataBoylam);
-        tableBody.append(data); */
-
+        //html de gösterilecek tablonun ve elemanlarının oluşturulması
         let dataEnlem = document.createElement("td");
         let dataBoylam = document.createElement("td");
         let dataSendTd = document.createElement("td");
@@ -93,8 +85,11 @@ auth.onAuthStateChanged(function (user) {
         dataSend.setAttribute("type", "checkbox");
         dataSendTd.append(dataSend);
 
+        if (item.val().send === true) {
+          dataSend.setAttribute("checked", "");
+        } else {
+        }
         //let key = item.key;
-
         let deleteDataTd = document.createElement("td");
         let deleteData = document.createElement("button");
         deleteData.setAttribute("id", "deleteBtn");
@@ -102,20 +97,13 @@ auth.onAuthStateChanged(function (user) {
         deleteData.innerHTML = "sil";
         deleteDataTd.append(deleteData);
 
-        if (item.val().send === true) {
-          dataSend.setAttribute("checked", "");
-        } else {
-          //dataSend.setAttribute("check", "");
-        }
-
         dataEnlem.innerHTML = item.val().enlem;
         dataBoylam.innerHTML = item.val().boylam;
         let data = document.createElement("tr");
+
+        //verilerin tabloya yazdırılması
         data.append(dataEnlem, dataBoylam, dataSendTd, deleteDataTd);
         tableBody.append(data);
-
-        //calistiiiiiiiiiiii
-        //console.log(item.val().enlem);
 
         /* böyle çalışmıyo td eklenmiyor vs
         let enlem = "<td>" + item.val().enlem + "<td>";
@@ -124,7 +112,6 @@ auth.onAuthStateChanged(function (user) {
         console.log(boylam);
         tableBody.append("<tr>" + enlem + boylam + "<tr>"); */
       });
-      console.log(table);
     });
 
     /*
@@ -132,10 +119,7 @@ auth.onAuthStateChanged(function (user) {
       console.log("delete basti");
     }); */
     $("#table tbody").on("click", "#deleteBtn", function () {
-      console.log("delete e basti");
-
       let $key = $(this).data("key");
-      console.log($key);
       dbRef.child($key).remove();
     });
   }
