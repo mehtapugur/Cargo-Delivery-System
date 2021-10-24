@@ -23,6 +23,8 @@ app.on("ready", () => {
       slashes: true,
     })
   );
+
+  //üstbardaki menüyü tanımlıyoruz
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
   Menu.setApplicationMenu(mainMenu);
 
@@ -31,11 +33,12 @@ app.on("ready", () => {
     console.log(data);
   });
 
-  // New Window
+  // Yeni pencere oluşturuyoruz
   ipcMain.on("key:newWindow", () => {
     createWindow();
   });
 
+  //başarıyla giriş yapıldıktan sonra açılacak olan ana pencere
   ipcMain.on("key:access", () => {
     intoWindow();
   });
@@ -116,6 +119,7 @@ function createWindow() {
   }); 
 }*/
 
+//giriş yapıldıktan sonraki ana pencere
 function intoWindow() {
   mainWindow.loadURL(
     url.format({
