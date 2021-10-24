@@ -43,9 +43,10 @@ auth.onAuthStateChanged(function (user) {
     //console.log(dbRef);
 
     dbRef.on("value", function (snapshot) {
+      initMap();
+
       snapshot.forEach(function (item) {
         //let key = item.key;
-
         if (item.val().send === true) {
           //dataSend.setAttribute("checked", "");
         } else {
@@ -55,6 +56,7 @@ auth.onAuthStateChanged(function (user) {
         let en = item.val().enlem;
         let boy = item.val().boylam;
         console.log("sayim ne");
+
         let marker = new google.maps.Marker({
           // ncity örnek: lat: 40.76041822993424, lng: 29.934315627096588
           position: { lat: Number(en), lng: Number(boy) },
@@ -69,17 +71,35 @@ auth.onAuthStateChanged(function (user) {
 function initMap() {
   let options = {
     center: { lat: 40.775, lng: 29.948 },
-    zoom: 12,
+    zoom: 16,
   };
   console.log("hatam ne");
   // New Map
   map = new google.maps.Map(document.getElementById("map"), options);
 
-  // Marker oluşturulması
-  /* let marker = new google.maps.Marker({
-    // ncity örnek: lat: 40.76041822993424, lng: 29.934315627096588
-    position: { lat: Number(en), lng: Number(boy) },
+  google.maps.event.addListener(map, "click", (event) => {
+    addMarker({ location: event.latLng });
+  });
+}
+
+function addMarker(property) {
+  const marker = new google.maps.Marker({
+    position: property.location,
     map: map,
-    //icon: "https://img.icons8.com/nolan/2x/marker.png",
-  }); */
+  });
+  //
+  console.log(JSON.stringify(property.location.toJSON().lat));
+
+  //console.log(property.location.latLng.lat);
+  let en = JSON.stringify(property.location.toJSON().lat);
+  let boy = JSON.stringify(property.location.toJSON().lng);
+
+  db.ref()
+    .child("users/" + current_user)
+    .child("locations")
+    .push({
+      enlem: en,
+      boylam: boy,
+      send: false,
+    });
 }
