@@ -59,6 +59,11 @@ app.on("ready", () => {
     openMap();
   });
 
+  ipcMain.on("key:changePassword", () => {
+    changePassword();
+    console.log("ben calistim");
+  });
+
   //ana pencere kapandığında tüm uygulama kapanır
   mainWindow.on("close", () => {
     app.quit();
@@ -134,6 +139,16 @@ function addressWindow() {
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "src\\cargo\\address\\address.html"),
+      protocol: "file:",
+      slashes: true,
+    })
+  );
+}
+
+function changePassword() {
+  mainWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "src\\user\\password\\password.html"),
       protocol: "file:",
       slashes: true,
     })
