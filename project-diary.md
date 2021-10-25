@@ -66,6 +66,15 @@
 ### Day 12
 
   - Haritada tıklanan yere marker eklenmesi işlemi yapıldı
-  - Haritada tıklanan konuma ait bilgilerin db ye gönderilmesi sağlandı
+  - Tıklanan konuma ait bilgilerin db ye gönderilmesi sağlandı
   - Gereksiz kodlar/yazımlar silindi
   - Tüm projeye yorum satırları eklendi
+
+### Day 13
+
+  - MongoDB, Webpack konuları araştırıldı
+  - Şifre değiştirme işlemi yapılmaya çalışıldı fakat desktop app olması sebebiyle firebase web kodları çalışmadı
+  - Travelling salesman problemi araştırıldı
+  - Projeye logout özelliği eklendi
+
+### Day 14
