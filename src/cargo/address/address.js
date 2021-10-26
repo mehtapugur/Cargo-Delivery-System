@@ -124,3 +124,31 @@ auth.onAuthStateChanged(function (user) {
     });
   }
 });
+
+/* OTOMATİK TAMAMLAMAYI  DENEDİM OLMADI
+//Search
+
+//Autocomplete
+
+let options = {
+  types: ["(cities)"],
+};
+
+let inputSearch = document.getElementById("searchBtn");
+let autocomplete = new google.maps.places.Autocomplete(inputSearch, options);
+
+function initMap() {
+  //harita merkezi ve yakınlık ölçüsü
+  let options = {
+    center: { lat: 40.775, lng: 29.948 },
+    zoom: 16,
+    mapTypeID: google.maps.MapTypeId.ROADMAP,
+  };
+
+  // Map oluşturma
+  map = new google.maps.Map();
+}
+
+initMap();
+
+*/
