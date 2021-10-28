@@ -15,6 +15,12 @@ const db = firebase.database();
 
 let current_user = "";
 
+let sayi = 0;
+//let myLocations = [[]];
+//let myLocations[] = [2];
+let myLocations = new Array();
+console.log(myLocations);
+
 auth.onAuthStateChanged(function (user) {
   if (user) {
     current_user = user.uid;
@@ -33,18 +39,28 @@ auth.onAuthStateChanged(function (user) {
         if (item.val().send === true) {
           //dataSend.setAttribute("checked", "");
         }
-
-        let en = item.val().enlem;
-        let boy = item.val().boylam;
-
+        let en = Number(item.val().enlem);
+        let boy = Number(item.val().boylam);
+        console.log(typeof en);
+        /* myLocations[sayi][0] = en;
+        myLocations[sayi][1] = boy;
+        console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
+        */
+        myLocations[sayi] = new Array(2);
+        myLocations[sayi][0] = en;
+        myLocations[sayi][1] = boy;
+        console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
+        sayi++;
         //db den alınan konumlara marker yerleştir
         let marker = new google.maps.Marker({
           // ncity örnek: lat: 40.76041822993424, lng: 29.934315627096588
-          position: { lat: Number(en), lng: Number(boy) },
+          position: { lat: en, lng: boy },
           map: map,
           //icon: "https://img.icons8.com/nolan/2x/marker.png",
         });
       });
+
+      yazdir(sayi);
     });
   }
 });
@@ -52,8 +68,9 @@ auth.onAuthStateChanged(function (user) {
 function initMap() {
   //harita merkezi ve yakınlık ölçüsü
   let options = {
-    center: { lat: 40.775, lng: 29.948 },
+    center: { lat: 40.775, lng: 29.948 }, //TODO: centeri otomatik olacak şekilde yap
     zoom: 16,
+    mapTypeID: google.maps.MapTypeId.ROADMAP,
   };
 
   // Map oluşturma
@@ -85,3 +102,14 @@ function addMarker(property) {
       send: false,
     });
 }
+
+function yazdir(arg) {
+  console.log(arg);
+}
+
+// djfskldf
+// sdkjfs
+// sdfksldmf
+// sdfksldmf
+// ctrl k , ctrl c ile oldu
+// geri almak için de ctrl k ve ctrl u ile u yani uncomment
