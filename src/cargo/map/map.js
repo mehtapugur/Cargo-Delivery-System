@@ -14,8 +14,6 @@ const auth = firebase.auth();
 const db = firebase.database();
 
 let current_user = "";
-
-let sayi = 0;
 //let myLocations = [[]];
 //let myLocations[] = [2];
 let myLocations = new Array();
@@ -33,7 +31,7 @@ auth.onAuthStateChanged(function (user) {
 
     dbRef.on("value", function (snapshot) {
       initMap(); //haritayı başlat
-
+      let sayi = 0;
       snapshot.forEach(function (item) {
         //let key = item.key;
         if (item.val().send === true) {
