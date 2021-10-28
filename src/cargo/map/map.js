@@ -46,9 +46,9 @@ auth.onAuthStateChanged(function (user) {
         myLocations[sayi][1] = boy;
         console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
         */
-        myLocations[sayi] = new Array(2);
-        myLocations[sayi][0] = en;
-        myLocations[sayi][1] = boy;
+        myLocations[sayi] = new Array(en, boy);
+        //myLocations[sayi][0] = en;
+        //myLocations[sayi][1] = boy;
         console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
         sayi++;
         //db den alınan konumlara marker yerleştir
@@ -60,7 +60,7 @@ auth.onAuthStateChanged(function (user) {
         });
       });
 
-      yazdir(sayi);
+      yazdir(sayi, myLocations);
     });
   }
 });
@@ -103,8 +103,11 @@ function addMarker(property) {
     });
 }
 
-function yazdir(arg) {
-  console.log(arg);
+function yazdir(num, arr) {
+  console.log(num);
+  for (let i = 0; i < num; i++) {
+    console.log(arr[i][0], arr[i][1]);
+  }
 }
 
 // djfskldf
