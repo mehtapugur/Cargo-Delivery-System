@@ -47,7 +47,7 @@ auth.onAuthStateChanged(function (user) {
         myLocations[sayi] = new Array(en, boy);
         //myLocations[sayi][0] = en;
         //myLocations[sayi][1] = boy;
-        console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
+        //console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
         sayi++;
         //db den alınan konumlara marker yerleştir
         let marker = new google.maps.Marker({
@@ -106,6 +106,7 @@ function yazdir(num, arr) {
   for (let i = 0; i < num; i++) {
     console.log(arr[i][0], arr[i][1]);
   }
+  console.log("***************");
 }
 
 // djfskldf
