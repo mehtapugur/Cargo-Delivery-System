@@ -78,3 +78,8 @@
   - Projeye logout özelliği eklendi
 
 ### Day 14
+
+  - Travelling salesman algoritması projeye implemente edilmeye çalışıldı
+
+### Day 15
+
