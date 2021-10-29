@@ -13,3 +13,5 @@ Hello World!
   - add back button
   - seperate signup and login page
   - login with username
+  - traveling salesman açıklaması yap salesman.js e
+  - travelling salesman projesini ayrı yap
