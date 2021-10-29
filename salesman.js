@@ -128,20 +128,25 @@ function calcDistance(points) {
 ///////////////////////// permütasyon bu da
 	
   function permute(input) {
-  var permArr = [],
-      usedChars = [];
-  return (function main() {
+  //var permArr = [],
+    let usedChars = [];
+    main();
+  	function main() {
     for (var i = 0; i < input.length; i++) {
       var ch = input.splice(i, 1)[0];
       usedChars.push(ch);
       if (input.length == 0) {
-        permArr.push(usedChars.slice());
+        //permArr.push(usedChars.slice());
+       console.log(usedChars);
       }
+       
       main();
       input.splice(i, 0, ch);
       usedChars.pop();
     }
-    return permArr;
-  })();
+    
+  }
+  //return 0;
 }
-document.write(JSON.stringify(permute(["A", "B", "C"])));
+//document.write(JSON.stringify(permute(["A", "B", "C"])));
+permute(["A", "B", "C", "D", "E"]);
