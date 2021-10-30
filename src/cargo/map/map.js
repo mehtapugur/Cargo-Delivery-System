@@ -19,6 +19,9 @@ let current_user = "";
 let myLocations = new Array();
 console.log(myLocations);
 
+let directionsService;
+let directionsDisplay;
+
 auth.onAuthStateChanged(function (user) {
   if (user) {
     current_user = user.uid;
@@ -39,7 +42,7 @@ auth.onAuthStateChanged(function (user) {
         }
         let en = Number(item.val().enlem);
         let boy = Number(item.val().boylam);
-        console.log(typeof en);
+        //console.log(typeof en);
         /* myLocations[sayi][0] = en;
         myLocations[sayi][1] = boy;
         console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
@@ -78,6 +81,33 @@ function initMap() {
   google.maps.event.addListener(map, "click", (event) => {
     addMarker({ location: event.latLng });
   });
+
+  directionsService = new google.maps.DirectionsService();
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map);
+}
+
+//mesafeyi bulma
+function calcRoute() {
+  let request = {
+    origin: { lat: 40.77274575422096, lng: 29.9484283486487 },
+    destination: { lat: 40.77368824865346, lng: 29.944823459732685 },
+    travelMode: google.maps.TravelMode.DRIVING,
+    unitSystem: google.maps.UnitSystem.IMPERIAL,
+  };
+
+  directionsService.route(request, (result, status) => {
+    if (status == google.maps.DirectionsStatus.OK) {
+      //get distance and time
+      let sonuc1 = result.routes[0].legs[0].distance.text;
+      let sonuc2 = result.routes[0].legs[0].duration.text;
+      console.log(sonuc1);
+      console.log(sonuc2);
+      directionsDisplay.setDirections(result);
+    } else {
+      //directionsDisplay.setDirections({routes: []});
+    }
+  });
 }
 
 //tıklanan yere marker ekleyip konumu db ye gönderme
@@ -107,6 +137,7 @@ function yazdir(num, arr) {
     console.log(arr[i][0], arr[i][1]);
   }
   console.log("***************");
+  calcRoute();
 }
 
 // djfskldf
@@ -115,3 +146,72 @@ function yazdir(num, arr) {
 // sdfksldmf
 // ctrl k , ctrl c ile oldu
 // geri almak için de ctrl k ve ctrl u ile u yani uncomment
+
+//******************************
+
+let cities = [];
+let totalCities = 3;
+let recordDistance;
+let bestEver;
+
+function setup() {
+  createCanvas(400, 300);
+  for (let i = 0; i < totalCities; i++) {
+    let v = createVector(random(width), random(height));
+    cities[i] = v;
+  }
+  let d = calcDistance(cities);
+  recordDistance = d;
+  bestEver = cities.slice();
+}
+
+function draw() {
+  background(0);
+  fill(255);
+  for (let i = 0; i < cities.length; i++) {
+    ellipse(cities[i].x, cities[i].y, 4, 4);
+  }
+  swap(cities, i, j);
+  let d = calcDistance(cities);
+  if (d < recordDistance) {
+    recordDistance = d;
+    bestEver = cities.slice(); //diziyi kopyalıyor
+    console.log(recordDistance);
+  }
+}
+
+//konumların sırasını karıştırıyor
+function swap(a, i, j) {
+  var temp = a[i];
+  a[i] = a[j];
+  a[j] = temp;
+}
+
+//her bir kombinasyonun uzunluğunu buluyor
+function calcDistance(points) {
+  let sum = 0;
+  for (let i = 0; points.length - 1; i++) {
+    let d = dist(points[i].x, points[i].y, points[i + 1].x, points[i + 1].y);
+    sum += d;
+  }
+  return sum;
+}
+
+//permütasyon fonksiyonu
+function permute(arr) {
+  var permArr = [],
+    usedChars = [];
+  return (function main() {
+    for (var i = 0; i < arr.length; i++) {
+      var ch = arr.splice(i, 1)[0];
+      usedChars.push(ch);
+      if (arr.length == 0) {
+        permArr.push(usedChars.slice());
+      }
+      main();
+      arr.splice(i, 0, ch);
+      usedChars.pop();
+    }
+    return permArr;
+  })();
+}
