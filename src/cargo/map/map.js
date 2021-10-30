@@ -90,9 +90,12 @@ function initMap() {
 //mesafeyi bulma
 function calcRoute() {
   let request = {
-    origin: { lat: 40.77274575422096, lng: 29.9484283486487 },
-    destination: { lat: 40.77368824865346, lng: 29.944823459732685 },
-    travelMode: google.maps.TravelMode.DRIVING,
+    //origin: { lat: 40.77274575422096, lng: 29.9484283486487 },
+    //destination: { lat: 40.77368824865346, lng: 29.944823459732685 },
+    origin: { lat: 40.76738250604148, lng: 29.9382959312722 },
+    destination: { lat: 40.77274575422096, lng: 29.9484283486487 },
+    //travelMode: google.maps.TravelMode.DRIVING,
+    travelMode: google.maps.TravelMode.WALKING, //trafiğe göre en kısa yolu vermesin diye yürüyerek yapıldı
     unitSystem: google.maps.UnitSystem.IMPERIAL,
   };
 
