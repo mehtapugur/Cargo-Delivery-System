@@ -97,35 +97,39 @@ function initMap() {
 function calcRoute(permArr) {
   console.log("permArr.length:" + permArr.length);
   let sum = 0;
+  const sonucum = async () => {
+    for (let i = 0; i < permArr.length - 1; i++) {
+      let request = {
+        //origin: { lat: 40.77274575422096, lng: 29.9484283486487 },
+        //destination: { lat: 40.77368824865346, lng: 29.944823459732685 },
+        //origin: { lat: 40.76738250604148, lng: 29.9382959312722 },
+        //destination: { lat: 40.77274575422096, lng: 29.9484283486487 },
+        origin: { lat: permArr[i][0], lng: permArr[i][1] },
+        destination: { lat: permArr[i + 1][0], lng: permArr[i + 1][1] },
+        //travelMode: google.maps.TravelMode.DRIVING,
+        travelMode: google.maps.TravelMode.WALKING, //trafiğe göre en kısa yolu vermesin diye yürüyerek yapıldı
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+      };
 
-  for (let i = 0; i < permArr.length - 1; i++) {
-    let request = {
-      //origin: { lat: 40.77274575422096, lng: 29.9484283486487 },
-      //destination: { lat: 40.77368824865346, lng: 29.944823459732685 },
-      //origin: { lat: 40.76738250604148, lng: 29.9382959312722 },
-      //destination: { lat: 40.77274575422096, lng: 29.9484283486487 },
-      origin: { lat: permArr[i][0], lng: permArr[i][1] },
-      destination: { lat: permArr[i + 1][0], lng: permArr[i + 1][1] },
-      //travelMode: google.maps.TravelMode.DRIVING,
-      travelMode: google.maps.TravelMode.WALKING, //trafiğe göre en kısa yolu vermesin diye yürüyerek yapıldı
-      unitSystem: google.maps.UnitSystem.IMPERIAL,
-    };
+      await directionsService.route(request, (result, status) => {
+        if (status == google.maps.DirectionsStatus.OK) {
+          //get distance and time
+          //let sonuc1 = result.routes[0].legs[0].distance.text;
+          let sonuc1 = result.routes[0].legs[0].distance.value;
+          //let sonuc2 = result.routes[0].legs[0].duration.text;
+          console.log(sonuc1);
+          //console.log(result.routes[0].legs[0].distance.value);
+          //console.log(sonuc2);
+          sum += sonuc1;
+          console.log("ben sum  " + sum);
+          //directionsDisplay.setDirections(result);
+        }
+      });
+    }
+    //return sum;
+  }; 
 
-    directionsService.route(request, (result, status) => {
-      if (status == google.maps.DirectionsStatus.OK) {
-        //get distance and time
-        //let sonuc1 = result.routes[0].legs[0].distance.text;
-        let sonuc1 = result.routes[0].legs[0].distance.value;
-        //let sonuc2 = result.routes[0].legs[0].duration.text;
-        console.log(sonuc1);
-        //console.log(result.routes[0].legs[0].distance.value);
-        //console.log(sonuc2);
-        sum += sonuc1;
-        console.log("ben sum  " + sum);
-        //directionsDisplay.setDirections(result);
-      }
-    });
-  }
+  return sum;
 }
 
 //tıklanan yere marker ekleyip konumu db ye gönderme
@@ -157,8 +161,10 @@ function yazdir(num, arr) {
   console.log("***************");
   //calcRoute();
   distance = calcRoute(arr);
+  console.log("ben distance: " + distance);
   bestDistance = distance;
   bestArr = [...arr];
+  console.log("***************");
   permute(arr);
 }
 
@@ -257,7 +263,7 @@ function permute(input) {
         //console.log(usedChars.length);
         //console.log(usedChars[0][0]);
         //console.log(usedChars[0]);
-        //calcRoute(usedChars);
+        calcRoute(usedChars);
       }
 
       main();
