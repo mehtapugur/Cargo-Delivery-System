@@ -14,17 +14,11 @@ const auth = firebase.auth();
 const db = firebase.database();
 
 let current_user = "";
-//let myLocations = [[]];
-//let myLocations[] = [2];
 let myLocations = new Array();
 console.log(myLocations);
 
 let directionsService;
 let directionsDisplay;
-//let permNumber;
-let distance;
-//let bestDistance;
-//let bestArr = [];
 
 auth.onAuthStateChanged(function (user) {
   if (user) {
@@ -46,27 +40,15 @@ auth.onAuthStateChanged(function (user) {
         }
         let en = Number(item.val().enlem);
         let boy = Number(item.val().boylam);
-        //console.log(typeof en);
-        /* myLocations[sayi][0] = en;
-        myLocations[sayi][1] = boy;
-        console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
-        */
         myLocations[sayi] = new Array(en, boy);
-        //myLocations[sayi][0] = en;
-        //myLocations[sayi][1] = boy;
-        //console.log(sayi, myLocations[sayi][0], myLocations[sayi][1]);
         sayi++;
         //db den alınan konumlara marker yerleştir
         let marker = new google.maps.Marker({
           // ncity örnek: lat: 40.76041822993424, lng: 29.934315627096588
           position: { lat: en, lng: boy },
           map: map,
-          //icon: "https://img.icons8.com/nolan/2x/marker.png",
         });
       });
-      //console.log("permNumber: " + findPermNumber(sayi));
-      //permNumber = findPermNumber(sayi);
-      //console.log(permNumber);
       yazdir(sayi, myLocations);
       calcRoute(myLocations);
     });
@@ -96,17 +78,9 @@ function initMap() {
 
 //mesafeyi bulma
 function calcRoute(arr) {
-  //console.log("permArr.length:" + permArr.length);
-  let sum = 0;
-  let j = 1;
   if (arr.length >= 2) {
     for (let i = 0; i < 2; i++) {
-      let result;
       let request = {
-        //origin: { lat: 40.77274575422096, lng: 29.9484283486487 },
-        //destination: { lat: 40.77368824865346, lng: 29.944823459732685 },
-        //origin: { lat: 40.76738250604148, lng: 29.9382959312722 },
-        //destination: { lat: 40.77274575422096, lng: 29.9484283486487 },
         origin: { lat: arr[i][0], lng: arr[i][1] },
         destination: { lat: arr[i + 1][0], lng: arr[i + 1][1] },
         //travelMode: google.maps.TravelMode.DRIVING,
@@ -116,29 +90,11 @@ function calcRoute(arr) {
 
       directionsService.route(request, (result, status) => {
         if (status == google.maps.DirectionsStatus.OK) {
-          //get distance and time
-          //let sonuc1 = result.routes[0].legs[0].distance.text;
-          //let sonuc1 = result.routes[0].legs[0].distance.value;
-          //let sonuc2 = result.routes[0].legs[0].duration.text;
-          //console.log(sonuc1);
-          //console.log(result.routes[0].legs[0].distance.value);
-          //console.log(sonuc2);
-          //sum += sonuc1;
-          //console.log("ben sum  " + sum);
-
-          console.log(j);
-          j++;
           directionsDisplay.setDirections(result);
-          //result += result;
-          console.log(result);
         }
       });
     }
   }
-
-  //return sum;
-
-  return sum;
 }
 
 //tıklanan yere marker ekleyip konumu db ye gönderme
@@ -166,119 +122,5 @@ function yazdir(num, arr) {
   console.log(num);
   for (let i = 0; i < num; i++) {
     console.log(arr[i][0], arr[i][1]);
-  }
-  //console.log("***************");
-  //calcRoute();
-  //distance = calcRoute(arr);
-  //console.log("ben distance: " + distance);
-  //bestDistance = distance;
-  //bestArr = [...arr];
-  console.log("***************");
-  //permute(arr);
-}
-
-/*
-function findPermNumber(num) {
-  if (num === 1) {
-    return 1;
-  }
-  return num * findPermNumber(num - 1);
-}*/
-
-// djfskldf
-// sdkjfs
-// sdfksldmf
-// sdfksldmf
-// ctrl k , ctrl c ile oldu
-// geri almak için de ctrl k ve ctrl u ile u yani uncomment
-
-//******************************
-
-let cities = [];
-let totalCities = 3;
-let recordDistance;
-let bestEver;
-
-function setup() {
-  createCanvas(400, 300);
-  for (let i = 0; i < totalCities; i++) {
-    let v = createVector(random(width), random(height));
-    cities[i] = v;
-  }
-  let d = calcDistance(cities);
-  recordDistance = d;
-  bestEver = cities.slice();
-}
-
-function draw() {
-  background(0);
-  fill(255);
-  for (let i = 0; i < cities.length; i++) {
-    ellipse(cities[i].x, cities[i].y, 4, 4);
-  }
-  swap(cities, i, j);
-  let d = calcDistance(cities);
-  if (d < recordDistance) {
-    recordDistance = d;
-    bestEver = cities.slice(); //diziyi kopyalıyor
-    console.log(recordDistance);
-  }
-}
-
-//her bir kombinasyonun uzunluğunu buluyor
-function calcDistance(points) {
-  let sum = 0;
-  for (let i = 0; points.length - 1; i++) {
-    let d = dist(points[i].x, points[i].y, points[i + 1].x, points[i + 1].y);
-    sum += d;
-  }
-  return sum;
-}
-
-//konumların sırasını karıştırıyor
-function swap(a, i, j) {
-  var temp = a[i];
-  a[i] = a[j];
-  a[j] = temp;
-}
-
-/*permütasyon fonksiyonu
-function permute(arr) {
-  var permArr = [],
-    usedChars = [];
-  return (function main() {
-    for (var i = 0; i < arr.length; i++) {
-      var ch = arr.splice(i, 1)[0];
-      usedChars.push(ch);
-      if (arr.length == 0) {
-        permArr.push(usedChars.slice());
-      }
-      main();
-      arr.splice(i, 0, ch);
-      usedChars.pop();
-    }
-    return permArr;
-  })();
-} */
-
-function permute(input) {
-  let usedChars = [];
-  main();
-  function main() {
-    for (var i = 0; i < input.length; i++) {
-      var ch = input.splice(i, 1)[0];
-      usedChars.push(ch);
-      if (input.length == 0) {
-        //her seferinde bir permütasyonunu buluyor burada
-        //console.log(usedChars.length);
-        //console.log(usedChars[0][0]);
-        //console.log(usedChars[0]);
-        calcRoute(usedChars);
-      }
-
-      main();
-      input.splice(i, 0, ch);
-      usedChars.pop();
-    }
   }
 }
