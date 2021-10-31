@@ -24,9 +24,33 @@ adres.addEventListener("click", () => {
 });
 
 auth.onAuthStateChanged(function (user) {
+  let enlemDOM = document.getElementById("enlem");
+  let boylamDOM = document.getElementById("boylam");
+  let saveBtn = document.getElementById("kaydet");
+
   if (user) {
     current_user = user.uid;
     console.log(current_user);
+
+    //kaydet butonuna basılınca
+    saveBtn.addEventListener("click", (e) => {
+      //inputlar boş değilse
+      if (enlemDOM.value !== "" && boylamDOM.value !== "") {
+        //alınan bilgiler db ye kaydedildi
+        db.ref()
+          .child("users/" + current_user)
+          .child("locations")
+          .push({
+            enlem: enlemDOM.value,
+            boylam: boylamDOM.value,
+            send: false,
+          });
+
+        //input değerleri sıfırlandı
+        enlemDOM.value = "";
+        boylamDOM.value = "";
+      }
+    });
 
     let dbRef = db
       .ref()
@@ -36,8 +60,8 @@ auth.onAuthStateChanged(function (user) {
     dbRef.on("value", function (snapshot) {
       let table = document.getElementById("table");
       let tableBody = table.children[1];
-      console.log(table);
-      console.log(tableBody);
+      //console.log(table);
+      //console.log(tableBody);
       tableBody.innerHTML = "";
 
       snapshot.forEach(function (item) {
@@ -46,6 +70,8 @@ auth.onAuthStateChanged(function (user) {
         let dataSendTd = document.createElement("td");
         let dataSend = document.createElement("input");
         dataSend.setAttribute("type", "checkbox");
+        dataSend.setAttribute("id", "dataSendCheckbox");
+        dataSend.setAttribute("data-key", item.key);
         dataSendTd.append(dataSend);
 
         if (item.val().send === true) {
@@ -75,6 +101,16 @@ auth.onAuthStateChanged(function (user) {
     $("#table tbody").on("click", "#deleteBtn", function () {
       let $key = $(this).data("key");
       dbRef.child($key).remove();
+    });
+
+    $("#table tbody").on("change", "#dataSendCheckbox", function () {
+      let $completed = $(this).prop("checked");
+      console.log($completed);
+      let $key = $(this).data("key");
+      dbRef.child($key).child("send").set($completed);
+      //console.log(dbRef.child($key).val().send);
+      console.log("check");
+      //console.log(dbRef.child($key));
     });
   }
 });
