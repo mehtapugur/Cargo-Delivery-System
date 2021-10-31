@@ -35,19 +35,20 @@ auth.onAuthStateChanged(function (user) {
       let sayi = 0;
       snapshot.forEach(function (item) {
         //let key = item.key;
-        if (item.val().send === true) {
+        if (item.val().send === false) {
           //dataSend.setAttribute("checked", "");
+          console.log(item.val().send);
+          let en = Number(item.val().enlem);
+          let boy = Number(item.val().boylam);
+          myLocations[sayi] = new Array(en, boy);
+          sayi++;
+          //db den alınan konumlara marker yerleştir
+          let marker = new google.maps.Marker({
+            // ncity örnek: lat: 40.76041822993424, lng: 29.934315627096588
+            position: { lat: en, lng: boy },
+            map: map,
+          });
         }
-        let en = Number(item.val().enlem);
-        let boy = Number(item.val().boylam);
-        myLocations[sayi] = new Array(en, boy);
-        sayi++;
-        //db den alınan konumlara marker yerleştir
-        let marker = new google.maps.Marker({
-          // ncity örnek: lat: 40.76041822993424, lng: 29.934315627096588
-          position: { lat: en, lng: boy },
-          map: map,
-        });
       });
       yazdir(sayi, myLocations);
       calcRoute(myLocations);
