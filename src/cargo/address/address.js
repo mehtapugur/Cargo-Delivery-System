@@ -34,34 +34,12 @@ openMapDOM.addEventListener("click", () => {
 
 //Kullanıcı giriş yaptıktan sonra
 auth.onAuthStateChanged(function (user) {
-  let enlemDOM = document.getElementById("enlem");
-  let boylamDOM = document.getElementById("boylam");
-  let saveBtn = document.getElementById("kaydet");
+  
 
   //Doğrulanmış bir kullanıcı varsa
   if (user) {
     current_user = user.uid;
     //console.log(current_user);
-
-    //kaydet butonuna basılınca
-    saveBtn.addEventListener("click", (e) => {
-      //inputlar boş değilse
-      if (enlemDOM.value !== "" && boylamDOM.value !== "") {
-        //alınan bilgiler db ye kaydedildi
-        db.ref()
-          .child("users/" + current_user)
-          .child("locations")
-          .push({
-            enlem: enlemDOM.value,
-            boylam: boylamDOM.value,
-            send: false,
-          });
-
-        //input değerleri sıfırlandı
-        enlemDOM.value = "";
-        boylamDOM.value = "";
-      }
-    });
 
     //konum bilgilerinin db de kaydedildiği path
     let dbRef = db
@@ -95,14 +73,14 @@ auth.onAuthStateChanged(function (user) {
         deleteData.setAttribute("id", "deleteBtn");
         deleteData.setAttribute("data-key", item.key);
         deleteData.innerHTML = "sil";
-        deleteDataTd.append(deleteData);
+        //deleteDataTd.append(deleteData);
 
         dataEnlem.innerHTML = item.val().enlem;
         dataBoylam.innerHTML = item.val().boylam;
         let data = document.createElement("tr");
 
         //verilerin tabloya yazdırılması
-        data.append(dataEnlem, dataBoylam, dataSendTd, deleteDataTd);
+        data.append(dataEnlem, dataBoylam);
         tableBody.append(data);
 
         /* böyle çalışmıyo td eklenmiyor vs
