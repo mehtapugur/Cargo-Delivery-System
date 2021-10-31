@@ -21,10 +21,10 @@ console.log(myLocations);
 
 let directionsService;
 let directionsDisplay;
-let permNumber;
+//let permNumber;
 let distance;
-let bestDistance;
-let bestArr = [];
+//let bestDistance;
+//let bestArr = [];
 
 auth.onAuthStateChanged(function (user) {
   if (user) {
@@ -64,10 +64,11 @@ auth.onAuthStateChanged(function (user) {
           //icon: "https://img.icons8.com/nolan/2x/marker.png",
         });
       });
-      console.log("permNumber: " + findPermNumber(sayi));
-      permNumber = findPermNumber(sayi);
-      console.log(permNumber);
+      //console.log("permNumber: " + findPermNumber(sayi));
+      //permNumber = findPermNumber(sayi);
+      //console.log(permNumber);
       yazdir(sayi, myLocations);
+      calcRoute(myLocations);
     });
   }
 });
@@ -94,40 +95,48 @@ function initMap() {
 }
 
 //mesafeyi bulma
-function calcRoute(permArr) {
-  console.log("permArr.length:" + permArr.length);
+function calcRoute(arr) {
+  //console.log("permArr.length:" + permArr.length);
   let sum = 0;
-  const sonucum = async () => {
-    for (let i = 0; i < permArr.length - 1; i++) {
+  let j = 1;
+  if (arr.length >= 2) {
+    for (let i = 0; i < 2; i++) {
+      let result;
       let request = {
         //origin: { lat: 40.77274575422096, lng: 29.9484283486487 },
         //destination: { lat: 40.77368824865346, lng: 29.944823459732685 },
         //origin: { lat: 40.76738250604148, lng: 29.9382959312722 },
         //destination: { lat: 40.77274575422096, lng: 29.9484283486487 },
-        origin: { lat: permArr[i][0], lng: permArr[i][1] },
-        destination: { lat: permArr[i + 1][0], lng: permArr[i + 1][1] },
+        origin: { lat: arr[i][0], lng: arr[i][1] },
+        destination: { lat: arr[i + 1][0], lng: arr[i + 1][1] },
         //travelMode: google.maps.TravelMode.DRIVING,
         travelMode: google.maps.TravelMode.WALKING, //trafiğe göre en kısa yolu vermesin diye yürüyerek yapıldı
         unitSystem: google.maps.UnitSystem.IMPERIAL,
       };
 
-      await directionsService.route(request, (result, status) => {
+      directionsService.route(request, (result, status) => {
         if (status == google.maps.DirectionsStatus.OK) {
           //get distance and time
           //let sonuc1 = result.routes[0].legs[0].distance.text;
-          let sonuc1 = result.routes[0].legs[0].distance.value;
+          //let sonuc1 = result.routes[0].legs[0].distance.value;
           //let sonuc2 = result.routes[0].legs[0].duration.text;
-          console.log(sonuc1);
+          //console.log(sonuc1);
           //console.log(result.routes[0].legs[0].distance.value);
           //console.log(sonuc2);
-          sum += sonuc1;
-          console.log("ben sum  " + sum);
-          //directionsDisplay.setDirections(result);
+          //sum += sonuc1;
+          //console.log("ben sum  " + sum);
+
+          console.log(j);
+          j++;
+          directionsDisplay.setDirections(result);
+          //result += result;
+          console.log(result);
         }
       });
     }
-    //return sum;
-  }; 
+  }
+
+  //return sum;
 
   return sum;
 }
@@ -158,22 +167,23 @@ function yazdir(num, arr) {
   for (let i = 0; i < num; i++) {
     console.log(arr[i][0], arr[i][1]);
   }
-  console.log("***************");
+  //console.log("***************");
   //calcRoute();
-  distance = calcRoute(arr);
-  console.log("ben distance: " + distance);
-  bestDistance = distance;
-  bestArr = [...arr];
+  //distance = calcRoute(arr);
+  //console.log("ben distance: " + distance);
+  //bestDistance = distance;
+  //bestArr = [...arr];
   console.log("***************");
-  permute(arr);
+  //permute(arr);
 }
 
+/*
 function findPermNumber(num) {
   if (num === 1) {
     return 1;
   }
   return num * findPermNumber(num - 1);
-}
+}*/
 
 // djfskldf
 // sdkjfs
