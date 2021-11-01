@@ -28,11 +28,12 @@ status.addEventListener("click", () => {
   ipcRenderer.send("key:status");
 });
 
+//çıkış yapmayınca en son giren kullanıcıda kalmaya devam ediyor
 auth.onAuthStateChanged(function (user) {
   if (user) {
     logout.addEventListener("click", () => {
       auth.signOut().then(function () {
-        console.log("çıktım");
+        ipcRenderer.send("key:logout");
       });
     });
   }
