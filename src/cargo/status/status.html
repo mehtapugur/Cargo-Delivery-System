@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="status.css">
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
@@ -12,12 +13,14 @@
   <title>Cargo</title>
 </head>
 <body>
-  <button id="openMap">Open Map</button><br>
-  <button id="adresGit">Teslimat adres sayfasını aç</button><br> <br>
+  <div class="header">
+    <button id="adresGit">Teslimat Adres Sayfası</button>
+    <button class="statusOk">Teslimat Durum Sayfası</button>
+  </div>
+  <button id="openMap">Open Map</button>
   <input type="text" id="enlem" placeholder="enlem bilgisi">
-  <input type="text" id="boylam" placeholder="boylam bilgisi"><br>
+  <input type="text" id="boylam" placeholder="boylam bilgisi">
   <button id="kaydet">Save</button>
-  <br><br>
   <div>
     <table id="table">
       <thead>
