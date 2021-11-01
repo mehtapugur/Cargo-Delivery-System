@@ -1,4 +1,3 @@
-//import { app, auth, db } from "";
 const electron = require("electron");
 const { ipcRenderer } = require("electron");
 
@@ -34,12 +33,9 @@ openMapDOM.addEventListener("click", () => {
 
 //Kullanıcı giriş yaptıktan sonra
 auth.onAuthStateChanged(function (user) {
-  
-
   //Doğrulanmış bir kullanıcı varsa
   if (user) {
     current_user = user.uid;
-    //console.log(current_user);
 
     //konum bilgilerinin db de kaydedildiği path
     let dbRef = db
@@ -73,7 +69,6 @@ auth.onAuthStateChanged(function (user) {
         deleteData.setAttribute("id", "deleteBtn");
         deleteData.setAttribute("data-key", item.key);
         deleteData.innerHTML = "sil";
-        //deleteDataTd.append(deleteData);
 
         dataEnlem.innerHTML = item.val().enlem;
         dataBoylam.innerHTML = item.val().boylam;
@@ -82,51 +77,11 @@ auth.onAuthStateChanged(function (user) {
         //verilerin tabloya yazdırılması
         data.append(dataEnlem, dataBoylam);
         tableBody.append(data);
-
-        /* böyle çalışmıyo td eklenmiyor vs
-        let enlem = "<td>" + item.val().enlem + "<td>";
-        let boylam = `<td> + ${item.val().boylam} + <td>`;
-        console.log(enlem);
-        console.log(boylam);
-        tableBody.append("<tr>" + enlem + boylam + "<tr>"); */
       });
     });
-
-    /*
-    document.body.on("click", "#deleteBtn", function () {
-      console.log("delete basti");
-    }); */
     $("#table tbody").on("click", "#deleteBtn", function () {
       let $key = $(this).data("key");
       dbRef.child($key).remove();
     });
   }
 });
-
-/* OTOMATİK TAMAMLAMAYI  DENEDİM OLMADI
-//Search
-
-//Autocomplete
-
-let options = {
-  types: ["(cities)"],
-};
-
-let inputSearch = document.getElementById("searchBtn");
-let autocomplete = new google.maps.places.Autocomplete(inputSearch, options);
-
-function initMap() {
-  //harita merkezi ve yakınlık ölçüsü
-  let options = {
-    center: { lat: 40.775, lng: 29.948 },
-    zoom: 16,
-    mapTypeID: google.maps.MapTypeId.ROADMAP,
-  };
-
-  // Map oluşturma
-  map = new google.maps.Map();
-}
-
-initMap();
-
-*/
