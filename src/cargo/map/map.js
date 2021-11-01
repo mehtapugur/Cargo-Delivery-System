@@ -36,8 +36,6 @@ auth.onAuthStateChanged(function (user) {
       snapshot.forEach(function (item) {
         //let key = item.key;
         if (item.val().send === false) {
-          //dataSend.setAttribute("checked", "");
-          console.log(item.val().send);
           let en = Number(item.val().enlem);
           let boy = Number(item.val().boylam);
           myLocations[sayi] = new Array(en, boy);
