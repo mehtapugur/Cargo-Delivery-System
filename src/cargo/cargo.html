@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cargo.css">
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
-  <title>Document</title>
+  <title>Cargo</title>
 </head>
-
 <body>
-  <br>
-  <button id="address">Teslimat adres sayfasına git</button>
-  <br>
-  <hr><br>
-  <button id="status">Teslimat durum sayfasına git</button>
-  <button id="logout">Logout</button>
+  <div class="main">
+    <div class="pages">
+      <button id="address">Teslimat adres sayfasına git</button>
+      <button id="status">Teslimat durum sayfasına git</button>
+    </div>
+    <button id="logout">Logout</button>
+  </div>
 </body>
-
 <script src="cargo.js"></script>
-
 </html>
