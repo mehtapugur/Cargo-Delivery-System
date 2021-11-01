@@ -1,0 +1,63 @@
+:root{
+  --color-primary: #635dff;
+  --color-secondary: #ee5d4a; 
+  --border-radius: .5rem;
+  --font-black: 700;
+  --line-height: 1.35;
+  --font-size: 1rem;
+}
+
+body {
+  font-family: 'Inter',sans-serif;
+  background-color: #222E3C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.header {
+  margin: 0;
+  background-color: var(--color-secondary);
+  color: #fff;
+  font-weight: var(--font-black);
+  text-align: center;
+  width: 100%;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary);
+  padding: 1.5rem 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  background-color: var(--color-secondary);
+  color: #fff;
+  width: 49.71%;
+  border: none;
+}
+
+#openMap{
+  margin: 1.5rem;
+  margin-top: 3rem;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  width: 140px;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+.addressOk{
+  background-color: #222E3C;
+}
