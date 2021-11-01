@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="address.css">
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
@@ -13,8 +13,11 @@
   <title>Cargo</title>
 </head>
 <body>
-  <button id="openMap">Open Map</button><br>
-  <button id="durumGit">Teslimat durum sayfasını aç</button><br>
+  <div class="header">
+    <button class="addressOk">Teslimat Adres Sayfası</button>
+    <button id="durumGit">Teslimat Durum Sayfası</button>
+  </div>
+  <button id="openMap">Open Map</button>
   <div id="burayaGel">
     <table id="table">
       <thead>
@@ -24,7 +27,6 @@
       <tbody></tbody>
     </table>
   </div>
-  <br>
   <script src="address.js"></script>
 </body>
 </html>
