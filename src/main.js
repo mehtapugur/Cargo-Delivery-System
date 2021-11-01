@@ -15,25 +15,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
-//const db = firebase.database();
 
 //DOM'daki input ve butonların tanımlanması
 let userNameDOM = document.getElementById("userName");
 let passwordDOM = document.getElementById("password");
-let enterDOM = document.getElementById("enter");
+
 let login = document.getElementById("login");
 let signup = document.getElementById("signup");
-let changePassword = document.getElementById("changePassword");
-
-//kaydet butonuna tıklandığında
-enterDOM.addEventListener("click", () => {
-  ipcRenderer.send("key:enter");
-});
-
-changePassword.addEventListener("click", () => {
-  ipcRenderer.send("key:changePassword");
-  console.log("passsssword");
-});
 
 //signup butonuna tıklandığında kullanıcı kaydı yapılır
 signup.addEventListener("click", () => {
@@ -53,5 +41,3 @@ login.addEventListener("click", () => {
     })
     .catch((e) => console.log(e));
 });
-
-//export { app, auth, db };
