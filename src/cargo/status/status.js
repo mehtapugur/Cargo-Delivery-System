@@ -17,10 +17,15 @@ const db = firebase.database();
 
 let current_user = "";
 let adres = document.getElementById("adresGit");
+let openMapDOM = document.getElementById("openMap");
 
 adres.addEventListener("click", () => {
   ipcRenderer.send("key:address");
   console.log("adresegit");
+});
+
+openMapDOM.addEventListener("click", () => {
+  ipcRenderer.send("key:openMap");
 });
 
 auth.onAuthStateChanged(function (user) {
@@ -60,8 +65,6 @@ auth.onAuthStateChanged(function (user) {
     dbRef.on("value", function (snapshot) {
       let table = document.getElementById("table");
       let tableBody = table.children[1];
-      //console.log(table);
-      //console.log(tableBody);
       tableBody.innerHTML = "";
 
       snapshot.forEach(function (item) {
@@ -83,7 +86,7 @@ auth.onAuthStateChanged(function (user) {
         let deleteData = document.createElement("button");
         deleteData.setAttribute("id", "deleteBtn");
         deleteData.setAttribute("data-key", item.key);
-        deleteData.innerHTML = "sil";
+        deleteData.innerHTML = "X";
         deleteDataTd.append(deleteData);
 
         dataEnlem.innerHTML = item.val().enlem;
@@ -94,10 +97,6 @@ auth.onAuthStateChanged(function (user) {
       });
     });
 
-    /*
-    document.body.on("click", "#deleteBtn", function () {
-      console.log("delete basti");
-    }); */
     $("#table tbody").on("click", "#deleteBtn", function () {
       let $key = $(this).data("key");
       dbRef.child($key).remove();
@@ -105,12 +104,8 @@ auth.onAuthStateChanged(function (user) {
 
     $("#table tbody").on("change", "#dataSendCheckbox", function () {
       let $completed = $(this).prop("checked");
-      console.log($completed);
       let $key = $(this).data("key");
       dbRef.child($key).child("send").set($completed);
-      //console.log(dbRef.child($key).val().send);
-      console.log("check");
-      //console.log(dbRef.child($key));
     });
   }
 });
