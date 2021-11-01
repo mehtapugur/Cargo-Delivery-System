@@ -61,7 +61,10 @@ app.on("ready", () => {
 
   ipcMain.on("key:changePassword", () => {
     changePassword();
-    console.log("ben calistim");
+  });
+
+  ipcMain.on("key:logout", () => {
+    logout();
   });
 
   //ana pencere kapandığında tüm uygulama kapanır
@@ -125,6 +128,16 @@ function createWindow() {
 }*/
 
 //giriş yapıldıktan sonraki ana pencere
+function logout() {
+  mainWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "src\\main.html"),
+      protocol: "file:",
+      slashes: true,
+    })
+  );
+}
+
 function intoWindow() {
   mainWindow.loadURL(
     url.format({
