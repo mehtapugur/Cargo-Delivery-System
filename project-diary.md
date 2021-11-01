@@ -14,27 +14,27 @@
 
 ### Day 4
 
-  - input ile alınan verinin login butonuna basılınca backend e aktarılması işlemi yapıldı
-  - butona basılınca yeni pencere açma olayı eklendi
+  - Input ile alınan verinin login butonuna basılınca backend e aktarılması işlemi yapıldı
+  - Butona basılınca yeni pencere açma olayı eklendi
 
 ### Day 5 - 6 - 7
 
-  - Kablosuzkedi  eğitim videolarındaki todo app yapılmaya çalışıldı, 7. videoda ki cancel butonu bir türlü olmayınca proje askıya alındı
-  - Cargo projesinde electron firebase bağlama işlemi yapıldı
-  - giriş yapılınca ana sayfa değiştirildi
-  - adres ve durum seçeneklerinin olduğu sayfa eklendi
-  - seçilen sayfaya göre uygulama arayüzüne html dosyasının yüklenmesi sağlandı
+  - Electron.js öğrenmek amacıyla Kablosuzkedi eğitim videolarındaki Todo App yapılmaya çalışıldı
+  - Cargo projesinde electron.js ve firebase bağlama işlemi yapıldı
+  - Giriş yapılınca ana sayfa değiştirildi
+  - Adres ve durum seçeneklerinin olduğu sayfa eklendi
+  - Seçilen sayfaya göre uygulama arayüzüne html dosyasının yüklenmesi sağlandı
  
 ### Day 8
 
   - Google maps api projeye eklendi
   - Hızlı giriş için main e enter butonu eklendi
   - mugur.js gmail hesabından google cloud a giriş yapıldı
-  - proje için billing işlemi yapıldı
-  - google maps enable işlemi yapıldı
-  - google cloud tan proje oluşturulup api alındı
-  - uygulamadan open maps butonu ile harita sayfası açtırıldı
-  - harita sayfası üzerinden butona basıldığı algılanabiliyor
+  - Proje için billing işlemi yapıldı
+  - Google maps enable işlemi yapıldı
+  - Google cloud tan proje oluşturulup api alındı
+  - Uygulamadan open maps butonu ile harita sayfası açtırıldı
+  - Harita sayfası üzerinden butona basıldığı algılanabiliyor
 
 ### Day 9
 
@@ -83,3 +83,13 @@
 
 ### Day 15
 
+  - Logout butonu eklendi
+  - Adres ve Teslim sayfaları düzenlendi
+  - Harita sayfası düzenlendi
+  - Directions API projeye eklendi
+  - İlk iki konum arasındaki rota haritada gösterildi
+  - Kullanılmayan HTML elemanları silindi
+  - Gönderim durumu, send işlemi tamamlandı
+  - Send işlemine bağlı marker gösterimleri yapıldı
+  - Gerekli stillendirmeler yapıldı
+  - Proje klasör yapısı düzeltildi
