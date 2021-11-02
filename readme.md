@@ -46,12 +46,16 @@ CSS is used for styling.
 | --- | 
 | <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px"> |
 
+  - The application has home page for login.
+  - Users can register to the application with Login button.
+  - Registered users can login to the application with Signup button.
+  - When the users logs in, they will see the main page with address, status and logout options.
+
 | Home2 | 
 | --- | 
-| <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px" height="400px"> | <div>...
-  ....
-  ...
-  </div>
+| <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px" height="400px"> | 
+
+
 
 | Home3 | 
 | --- | 
