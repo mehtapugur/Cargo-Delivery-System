@@ -38,6 +38,7 @@ CSS is used for styling.
   - Users can change the status of cargoes and delete them.
   - Cargo locations are shown on the map.
   - The markers of the cargoes with a "true" send value are deleted from the map.
+  - Users can save a cargo address to the database by clicking on the map. A marker is created at the clicked place on the map.
   - The shortest path is drawn for the first two cargo locations in the database.
 
 ## :camera_flash: Screenshots
@@ -78,6 +79,10 @@ CSS is used for styling.
   - Users can **Save** cargo with the latitude and longitude values they type.
   - Users can open the Map page with the **Open Map** button.
   - The shortest path is drawn for the first two cargo locations in the database.<br/><br/>
+
+| Cargo Delivery System| 
+| --- | 
+| ![Preview](https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif) |
 
 
 ## sdhfsa
