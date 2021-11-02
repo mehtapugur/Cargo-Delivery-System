@@ -44,7 +44,7 @@ CSS is used for styling.
 
 | Home | 
 | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139897266-b63db28f-0d24-49cd-803e-bedbcf3923bd.png) |
+| ![Preview](https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png) |
 
   - add project history with link
   - add ptoject files table
