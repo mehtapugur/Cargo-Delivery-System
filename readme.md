@@ -3,6 +3,7 @@
   <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
   <a href="#memo-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
 </p>
 
@@ -82,9 +83,8 @@ CSS is used for styling.
 
 ## :computer: Setup
   
-  - To run the project, NodeJS must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/mehtapugur/Cargo-Delivery-System.git`` and press the enter button. After opening the downloaded project in the code editor, we download the project dependencies by typing ``npm install`` in the terminal. After this process is finished, we run the project by typing ``npm start`` in the terminal. 
+  - To run the project, NodeJS must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/mehtapugur/Cargo-Delivery-System.git`` and press the enter button. After opening the downloaded project in the code editor, we download the project dependencies by typing ``npm install`` in the terminal. After this process is finished, we run the project by typing ``npm start`` in the terminal. <br/><br/>
    
-
 ## 📁 Project Folder Structure
     
     Cargo-Delivery-System
@@ -116,10 +116,11 @@ CSS is used for styling.
     │                 
     ├── readme.md    
     |
-             
+<br/>
+
 ## 🚀 Project History 
 
-  - add project history with link
+  - <a href="https://github.com/mehtapugur/Cargo-Delivery-System/blob/main/project-diary.md">Here<a/>, the project has a 15-day development period. You can read if you want.<br/><br/>
 
 ## :memo: License 
 This project is under the terms of the MIT license.
