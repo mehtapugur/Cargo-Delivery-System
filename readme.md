@@ -48,7 +48,10 @@ CSS is used for styling.
 
 | Home2 | 
 | --- | 
-| <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px" height="400px"> |
+| <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px" height="400px"> | <div>...
+  ....
+  ...
+  </div>
 
 | Home3 | 
 | --- | 
