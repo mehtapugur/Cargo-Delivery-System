@@ -30,21 +30,28 @@ JavaScript and NodeJS are used for background processes.<br/>
 CSS is used for styling.
 <br/>
 
+## :sparkles: Main Features
+
+- Application has onboarding page for presentation.
+- Home page has listed offers, categories and restaurants.
+- When user chose category, user will see new restaurant list filtered by categories.
+- Restaurant's meals and drinks are listed on the restaurant detail page.
+- Users can choose address, payment method and foods. Then, can order.
+- Users are able to see on order page, previous and current orders.
+- User are able to see user's data and addresses in profile page.
+
+## :camera_flash: Screenshots
+
+| Home | 
+| --- | 
+| ![Preview](https://user-images.githubusercontent.com/24686636/139897266-b63db28f-0d24-49cd-803e-bedbcf3923bd.png) |
+
   - add project history with link
   - add ptoject files table
-  - add tech stack
   - add pictures
   - add what is project and what to do
   - add gif
   - picture must be center on view
-  - add emojis
-  - add comments on codes files
-  - fix the folder structures
-  - add back button
-  - seperate signup and login page
-  - login with username
-  - traveling salesman açıklaması yap salesman.js e
-  - travelling salesman projesini ayrı yap
 
 ## :memo: License 
 This project is under the terms of the MIT license.
