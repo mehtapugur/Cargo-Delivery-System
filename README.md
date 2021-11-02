@@ -20,12 +20,13 @@ Cargo Delivery System is a application that allows cargo companies to track thei
 - [Electron.js](https://www.electronjs.org/)
 - [JavaScript](https://www.javascript.com/)
 - [NodeJS](https://nodejs.org/en/)
-- [CSS3](https://www.w3schools.com/css/)
-- [HTML5](https://www.w3schools.com/html/)
+- [CSS](https://www.w3schools.com/css/)
+- [HTML](https://www.w3schools.com/html/)
 
 Database operations of this application are designed with Firebase Realtime Database and Firebase Authentication.<br/>
 Google Cloud, Google Maps API and Google Directions API are used for map operations.<br/>
-It was developed with Electron.js to be a desktop application. JavaScript and NodeJS are used for background processes.<br/>
+It was developed with Electron.js to be a desktop application. <br/>
+JavaScript and NodeJS are used for background processes.<br/>
 CSS is used for styling.
 <br/>
 
@@ -49,4 +50,4 @@ CSS is used for styling.
 This project is under the terms of the MIT license.
 <br/>
 <br/>
-Contact: https://www.linkedin.com/in/mehtapugur/
+Contact: [LinkedIn](https://www.linkedin.com/in/mehtapugur)
