@@ -14,7 +14,7 @@
 </div>
 
 ## :calling: About
-Cargo Delivery System is a application that allows cargo companies to track their cargo and determine a route for the courier.
+Cargo Delivery System is a desktop application that allows cargo companies to track their cargo and determine a route for the courier.
 
 ## :gear: Technologies
 
