@@ -93,3 +93,7 @@
   - Send işlemine bağlı marker gösterimleri yapıldı
   - Gerekli stillendirmeler yapıldı
   - Proje klasör yapısı düzeltildi
+
+### End
+
+  - Projeye readme dosyası eklendi.
