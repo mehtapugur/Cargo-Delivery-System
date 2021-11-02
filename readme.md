@@ -5,7 +5,7 @@
   <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-setup">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
   <a href="#file_folder-project">Structure</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
-  <a href="#rocket-project">History</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+  <a href="#rocket-project-history">History</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
   <a href="#memo-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
 </p>
 
@@ -73,7 +73,7 @@ CSS is used for styling.
 
 | Status | Map | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="600px"> |
+| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="700px"> |
 
   - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
   - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
