@@ -50,7 +50,7 @@ CSS is used for styling.
   - Users can register to the application with **Login** button.
   - Registered users can login to the application with **Signup** button.
   - When the users logs in, they will see the **Cargo** page with address, status and logout options.
-  - Note: Password must be at least 8 characters.<br/><br/>
+  - **Note**: Password must be at least 8 characters.<br/><br/>
 
 | Cargo | Logout | 
 | --- | --- | 
@@ -58,27 +58,31 @@ CSS is used for styling.
 
   - Users can go to the **Address Page** with the address button.
   - Users can go to the **Status Page** with the status button.
-  - Users can log out by pressing the **Logout** button.<br/>
+  - Users can log out by pressing the **Logout** button.<br/><br/>
 
-| Addres | Map | 
+| Address | Map | 
 | --- | --- | 
 | ![Preview](https://user-images.githubusercontent.com/24686636/139924222-8ce09c47-771f-442b-9c70-ecdbd9ecca48.png) | ![Preview](https://media.giphy.com/media/TuFP8wtAsy8qo4YoKN/giphy.gif) |
 
   - The latitude and longitude information of the cargoes in the database are listed on the **Address Page**.
-  - Users can open the Map page with the **Open Map** button.
+  - Users can open the Map page with the **Open Map** button.<br/><br/>
 
+| Status | Map | 
+| --- | --- | 
+| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | ![Preview](https://user-images.githubusercontent.com/24686636/139925591-22fb3827-9a08-4282-82bf-79256ababee9.png) |
 
-| Home3 | 
-| --- | 
-| <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="700px" height="500px"> |
+  - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
+  - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
+  - The cargo location with "true" send information is deleted from the map, the marker is deleted.
+  - Users can delete the cargoes by pressing the **X** button.
+  - Users can **Save** cargo with the latitude and longitude values they type.
+  - Users can open the Map page with the **Open Map** button.<br/><br/>
+
 
 
   - add project history with link
   - add ptoject files table
-  - add pictures
   - add what is project and what to do
-  - add gif
-  - picture must be center on view
 
 ## :memo: License 
 This project is under the terms of the MIT license.
