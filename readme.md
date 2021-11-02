@@ -4,6 +4,8 @@
   <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-setup">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+  <a href="#file_folder-project">Structure</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+  <a href="#rocket-project">History</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
   <a href="#memo-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
 </p>
 
@@ -85,7 +87,7 @@ CSS is used for styling.
   
   - To run the project, NodeJS must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/mehtapugur/Cargo-Delivery-System.git`` and press the enter button. After opening the downloaded project in the code editor, we download the project dependencies by typing ``npm install`` in the terminal. After this process is finished, we run the project by typing ``npm start`` in the terminal. <br/><br/>
    
-## 📁 Project Folder Structure
+## :file_folder: Project Folder Structure
     
     Cargo-Delivery-System
     .
@@ -118,11 +120,11 @@ CSS is used for styling.
     |
 <br/>
 
-## 🚀 Project History 
+## :rocket: Project History
 
 <a href="https://github.com/mehtapugur/Cargo-Delivery-System/blob/main/project-diary.md">Here<a/>, the project has a 15-day development period. You can read if you want.<br/><br/>
 
-## :memo: License 
+## :memo: License
 This project is under the terms of the MIT license.
 <br/>
 <br/>
