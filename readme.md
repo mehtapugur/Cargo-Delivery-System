@@ -50,16 +50,16 @@ CSS is used for styling.
   - Users can register to the application with **Login** button.
   - Registered users can login to the application with **Signup** button.
   - When the users logs in, they will see the **Cargo** page with address, status and logout options.
-  - Note: Password must be at least 8 characters.
-<br/><br/>
+  - Note: Password must be at least 8 characters.<br/><br/>
+
 | Cargo | Logout | 
 | --- | --- | 
 | ![Preview](https://user-images.githubusercontent.com/24686636/139920166-1bac2ecd-4526-49e8-a8d6-3d74a50a01bc.png) | ![Preview](https://media.giphy.com/media/0BdQhGuevErtCfVVJ3/giphy.gif) |
 
   - Users can go to the **Address Page** with the address button.
   - Users can go to the **Status Page** with the status button.
-  - Users can log out by pressing the **Logout** button.
-<br/>
+  - Users can log out by pressing the **Logout** button.<br/>
+
 | Addres | Map | 
 | --- | --- | 
 | ![Preview](https://user-images.githubusercontent.com/24686636/139924222-8ce09c47-771f-442b-9c70-ecdbd9ecca48.png) | ![Preview](https://media.giphy.com/media/TuFP8wtAsy8qo4YoKN/giphy.gif) |
