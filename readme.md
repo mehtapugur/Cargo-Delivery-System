@@ -56,6 +56,10 @@ CSS is used for styling.
 | --- | --- | 
 | ![Preview](https://user-images.githubusercontent.com/24686636/139919671-75efbc6d-b0cb-4b33-9c1c-96dee1eb739f.png) | ![Preview](https://media.giphy.com/media/0BdQhGuevErtCfVVJ3/giphy.gif) |
 
+| Cargo2 | Logout | 
+| --- | --- | 
+| ![Preview](https://user-images.githubusercontent.com/24686636/139920166-1bac2ecd-4526-49e8-a8d6-3d74a50a01bc.png) | ![Preview](https://media.giphy.com/media/0BdQhGuevErtCfVVJ3/giphy.gif) |
+
 | Home3 | 
 | --- | 
 | <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="700px" height="500px"> |
