@@ -51,7 +51,7 @@ CSS is used for styling.
   - Registered users can login to the application with **Signup** button.
   - When the users logs in, they will see the **Cargo** page with address, status and logout options.
   - Note: Password must be at least 8 characters.
-
+<br/><br/>
 | Cargo | Logout | 
 | --- | --- | 
 | ![Preview](https://user-images.githubusercontent.com/24686636/139920166-1bac2ecd-4526-49e8-a8d6-3d74a50a01bc.png) | ![Preview](https://media.giphy.com/media/0BdQhGuevErtCfVVJ3/giphy.gif) |
@@ -59,10 +59,10 @@ CSS is used for styling.
   - Users can go to the **Address Page** with the address button.
   - Users can go to the **Status Page** with the status button.
   - Users can log out by pressing the **Logout** button.
-
+<br/>
 | Addres | Map | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139923527-228ed7b0-504c-42a0-a32e-a36d5321c6c0.png) | ![Preview](https://media.giphy.com/media/TuFP8wtAsy8qo4YoKN/giphy.gif) |
+| ![Preview](https://user-images.githubusercontent.com/24686636/139924222-8ce09c47-771f-442b-9c70-ecdbd9ecca48.png) | ![Preview](https://media.giphy.com/media/TuFP8wtAsy8qo4YoKN/giphy.gif) |
 
   - The latitude and longitude information of the cargoes in the database are listed on the **Address Page**.
   - Users can open the Map page with the **Open Map** button.
