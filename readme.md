@@ -32,13 +32,13 @@ CSS is used for styling.
 
 ## :sparkles: Main Features
 
-- Application has onboarding page for presentation.
-- Home page has listed offers, categories and restaurants.
-- When user chose category, user will see new restaurant list filtered by categories.
-- Restaurant's meals and drinks are listed on the restaurant detail page.
-- Users can choose address, payment method and foods. Then, can order.
-- Users are able to see on order page, previous and current orders.
-- User are able to see user's data and addresses in profile page.
+  - Cargo information is kept in Firebase and updated dynamically.
+  - Users must register to use the application.
+  - Cargoes in the database are listed.
+  - Users can change the status of cargoes and delete them.
+  - Cargo locations are shown on the map.
+  - The markers of the cargoes with a "true" send value are deleted from the map.
+  - The shortest path is drawn for the first two cargo locations in the database.
 
 ## :camera_flash: Screenshots
 
@@ -76,10 +76,11 @@ CSS is used for styling.
   - The cargo location with "true" send information is deleted from the map, the marker is deleted.
   - Users can delete the cargoes by pressing the **X** button.
   - Users can **Save** cargo with the latitude and longitude values they type.
-  - Users can open the Map page with the **Open Map** button.<br/><br/>
+  - Users can open the Map page with the **Open Map** button.
+  - The shortest path is drawn for the first two cargo locations in the database.<br/><br/>
 
 
-
+## sdhfsa
   - add project history with link
   - add ptoject files table
   - add what is project and what to do
