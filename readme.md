@@ -3,7 +3,7 @@
   <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#computer">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+  <a href="#computer-setup">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
   <a href="#memo-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
 </p>
 
@@ -71,7 +71,7 @@ CSS is used for styling.
 
 | Status | Map | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="400px"> |
+| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="600px"> |
 
   - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
   - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
@@ -79,7 +79,7 @@ CSS is used for styling.
   - Users can delete the cargoes by pressing the **X** button.
   - Users can **Save** cargo with the latitude and longitude values they type.
   - Users can open the Map page with the **Open Map** button.
-  - The shortest path is drawn for the first two cargo locations in the database.<br/><br/>
+  - The shortest path is drawn for the first two cargo locations in the database.<br/>
 
 ## :computer: Setup
   
@@ -120,7 +120,7 @@ CSS is used for styling.
 
 ## 🚀 Project History 
 
-  - <a href="https://github.com/mehtapugur/Cargo-Delivery-System/blob/main/project-diary.md">Here<a/>, the project has a 15-day development period. You can read if you want.<br/><br/>
+<a href="https://github.com/mehtapugur/Cargo-Delivery-System/blob/main/project-diary.md">Here<a/>, the project has a 15-day development period. You can read if you want.<br/><br/>
 
 ## :memo: License 
 This project is under the terms of the MIT license.
