@@ -70,7 +70,7 @@ CSS is used for styling.
 
 | Status | Map | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | ![Preview](https://user-images.githubusercontent.com/24686636/139927977-bf9d2e82-e25d-4362-b3f1-1ba7f691f531.png) |
+| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="400px"> |
 
   - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
   - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
@@ -80,23 +80,46 @@ CSS is used for styling.
   - Users can open the Map page with the **Open Map** button.
   - The shortest path is drawn for the first two cargo locations in the database.<br/><br/>
 
-| Cargo Delivery System| 
-| --- | 
-| ![Preview](https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif) |
+## :computer: Setup
+  
+  - To run the project, NodeJS must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/mehtapugur/Cargo-Delivery-System.git`` and press the enter button. After opening the downloaded project in the code editor, we download the project dependencies by typing ``npm install`` in the terminal. After this process is finished, we run the project by typing ``npm start`` in the terminal. 
+   
 
-| Cargo Delivery System| 
-| --- | 
-| <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="750px"> |
+## 📁 Project Folder Structure
+    
+    Cargo-Delivery-System
+    .
+    |
+    ├── src
+    |    └── cargo
+    |       └── address
+    |          └── address.css
+    |          └── address.html
+    |          └── address.js
+    │       └── map
+    |          └── map.html
+    |          └── map.js
+    │       └── status  
+    |          └── status.css
+    |          └── status.html
+    |          └── status.js
+    │       └── cargo.css     
+    │       └── cargo.html
+    |       └── cargo.js
+    │    └── main.css 
+    │    └── main.html
+    |    └── main.js
+    |
+    ├── index.js
+    |
+    ├── project-diary.md
+    │                 
+    ├── readme.md    
+    |
+             
+## 🚀 Project History 
 
-| Cargo Delivery System| 
-| --- | 
-| <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="850px"> |
-
-
-## sdhfsa
   - add project history with link
-  - add ptoject files table
-  - add what is project and what to do
 
 ## :memo: License 
 This project is under the terms of the MIT license.
