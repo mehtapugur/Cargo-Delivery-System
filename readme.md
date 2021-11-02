@@ -69,7 +69,7 @@ CSS is used for styling.
 
 | Status | Map | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | ![Preview](https://user-images.githubusercontent.com/24686636/139925591-22fb3827-9a08-4282-82bf-79256ababee9.png) |
+| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | ![Preview](https://user-images.githubusercontent.com/24686636/139927808-55399c72-3483-4c91-851e-4827b8b231c3.png) |
 
   - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
   - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
