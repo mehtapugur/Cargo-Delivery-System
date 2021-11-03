@@ -61,3 +61,12 @@ button:hover {
 .addressOk{
   background-color: #222E3C;
 }
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  padding-left: 18px;
+}
