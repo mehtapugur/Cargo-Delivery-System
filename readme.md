@@ -81,7 +81,17 @@ CSS is used for styling.
   - Users can delete the cargoes by pressing the **X** button.
   - Users can **Save** cargo with the latitude and longitude values they type.
   - Users can open the Map page with the **Open Map** button.
-  - The shortest path is drawn for the first two cargo locations in the database.<br/>
+  - The shortest path is drawn for the first two cargo locations in the database.<br/><br/>
+
+| Firebase Realtime Database | 
+| --- | 
+| <img src="https://user-images.githubusercontent.com/24686636/140101981-9c7e16b6-7831-4daa-bbc3-304b21ff2819.png" width="600px"> |
+
+  - A **key** is generated for each user.
+  - There are **users** and **locations**.
+  - A key is created for each location under **locations**.
+  - **latitude**, **longitude** and **send** information of each location is stored. <br/><br/>
+
 
 ## :computer: Setup
   
