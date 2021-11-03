@@ -83,3 +83,12 @@ input {
 #deleteBtn {
   border-radius: 3px;
 }
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  padding-left: 18px;
+}
