@@ -101,33 +101,33 @@ CSS is used for styling.
     
     Cargo-Delivery-System
     .
-    |
+    │
     ├── src
-    |    └── cargo
-    |       └── address
-    |          └── address.css
-    |          └── address.html
-    |          └── address.js
+    │    └── cargo
+    │       └── address
+    │          └── address.css
+    │          └── address.html
+    │          └── address.js
     │       └── map
-    |          └── map.html
-    |          └── map.js
+    │          └── map.html
+    │          └── map.js
     │       └── status  
-    |          └── status.css
-    |          └── status.html
-    |          └── status.js
+    │          └── status.css
+    │          └── status.html
+    │          └── status.js
     │       └── cargo.css     
     │       └── cargo.html
-    |       └── cargo.js
+    │       └── cargo.js
     │    └── main.css 
     │    └── main.html
-    |    └── main.js
-    |
+    │    └── main.js
+    │
     ├── index.js
-    |
+    │
     ├── project-diary.md
     │                 
     ├── readme.md    
-    |
+    │
 <br/>
 
 ## :rocket: Project History
